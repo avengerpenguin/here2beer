@@ -3,7 +3,6 @@ package uk.co.rossfenning.android;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
-import uk.co.rossfenning.android.R;
 import uk.co.rossfenning.android.client.PlaceSearchClient;
 
 public class RandomPubActivity extends Activity {
