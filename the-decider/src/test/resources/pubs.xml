@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlaceSearchResponse>
+ <status>OK</status>
+ <result>
+  <name>The Wyvern</name>
+  <vicinity>The Midland Hotel, Peter Street, Manchester</vicinity>
+  <type>bar</type>
+  <type>lodging</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4771070</lat>
+    <lng>-2.2450560</lng>
+   </location>
+  </geometry>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CnRoAAAA1O1KITtLEVnjsbFLdkMNcygyQQKvOuvnyct7Dc0PhrPpQjG_5Iq1o1UiINmY3jXNKEq-dVnl6ny7UCSVh2uyR1JVI44LpaLLVNznNsrSThR8_NQarBrTbcscleaOIZBV0UPfLoNKXBhbIjMQyRvhPhIQfJkC6dothRJjqoMzo-yVchoUv47sh7ykuoNsvj09tQJEgtuUi9g</reference>
+  <id>d0a52692f0befd56cfa8bd5c22eda70a4a7bc69e</id>
+ </result>
+ <result>
+  <name>Table Table</name>
+  <vicinity>7 Lower Mosley Street, Manchester</vicinity>
+  <type>bar</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4768710</lat>
+    <lng>-2.2449020</lng>
+   </location>
+  </geometry>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CnRoAAAACkbKLbUFmQA8S6ZdPxEPbqsR9FbNaStrjRn1WEDNJFDrqd1acPd95reTpKT8Y8aNKf4oEkLY90NXmoz4AcUifYo48XEjgl2g4IOsJ55ZBZK8AhfGU1syOwMvCbHlCZrcSwCsDpyPnZL_PBWupXX05RIQ4aAR7bPK_9sSgAunBjc8QRoU9aUssZE1-zkO90OwEFZxCqcQm9I</reference>
+  <id>4a42b39db0e1cffca47507c29e48500fcda5700a</id>
+ </result>
+ <result>
+  <name>Premier Inn Manchester Central</name>
+  <vicinity>Bishopsgate, 7-11 Lower Mosley Street, Manchester</vicinity>
+  <type>bar</type>
+  <type>restaurant</type>
+  <type>lodging</type>
+  <type>food</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4767270</lat>
+    <lng>-2.2445600</lng>
+   </location>
+  </geometry>
+  <rating>3.7</rating>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CoQBfAAAAOCrm1VKwHWIiBovJx_LEP5AaSs4KIsuQ8rYA83eExGWDyT0tkJhG-3KrXomAYkzz2N5E88cVNQyT0RpZIQq-06F39dH_GMyT9T0WeYL2_15Vi5pKERP5dQ3QJ1M2raG2OWzlJYTbUzy4RNZksnFbnM8uIEuOuFgY6w4C1nbE2e4EhBek3BE53eKL9uJ4Xf4ZEyOGhQkcpJJWse-TGYfZGCwkYTeZ3SOcA</reference>
+  <id>09cd5ddcb25ea76ac0a925699c29723512e993d8</id>
+  <opening_hours>
+   <open_now>true</open_now>
+  </opening_hours>
+  <photo>
+   <photo_reference>CpQBggAAAG27hswiXTjfGjKDVHM_gQIK6qPpNoIQ7_OvDKn_TG17LaYjeoSyY57bV4hdffTFgt8taGKdY1y5xBcI2aP2FSQui7B5rDdKyeadk_Hhawl2PFW5kB-w8ca8yPTEOz3NlWQx4yuFeLFR2_-Cv3sJroBig6tvRsy_poGx86JHMqoG9heoz28lSB1zORDoouAHHhIQ56qRguyMQvLoyFFVjDPx7xoUx5fM1VTS3EFUjH4KTNZ0Hm-RkTk</photo_reference>
+   <width>354</width>
+   <height>235</height>
+  </photo>
+ </result>
+ <result>
+  <name>The Paramount</name>
+  <vicinity>33-35 Oxford Street, Manchester</vicinity>
+  <type>bar</type>
+  <type>restaurant</type>
+  <type>food</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4765140</lat>
+    <lng>-2.2426180</lng>
+   </location>
+  </geometry>
+  <rating>3.6</rating>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CnRrAAAAGZdyfRpNn9zOCCeObtT9w1kYJkdQp3ZfsFtHUfmo_8CIn5TEo3eTpJ7f20OOPcYjxJoG_u9ydPfQOlaouPUtbAFo0-LRmIkIrPLRNvxfg7G7sOpI9Mn5uCMP4CNLgDn9Ps0lHcY-As8ZR9xSdRNlXhIQaqe49J8jUCy1v6PQYm9R4xoUOdsNxCKNWUqFZbCCJTr0TlzNqK8</reference>
+  <id>e3161d4521c14d683a770c9a300d2645fd2fc7a1</id>
+  <opening_hours>
+   <open_now>true</open_now>
+  </opening_hours>
+  <photo>
+   <photo_reference>CnRtAAAAb7drK1t1do_w4szme78clCUhZEaxEvmFdY7pkgDpYzQQtQIWrROMyipUlVDglySL_DdkYzosmZKc7P7VqkoMJ8TmWfU3YFCCcwann0-OFbuv_fLEgE8MWgT_wvm7wbXMcq-sdHS_jo_mA9IAKF0IQxIQZkGDsT19TnQHIGhFGYV3FxoUAsShCdDNaisZOJJX5nVqIJlvz0Y</photo_reference>
+   <width>960</width>
+   <height>1280</height>
+   <html_attribution>From a Google User</html_attribution>
+  </photo>
+  <price_level>1</price_level>
+ </result>
+ <result>
+  <name>The Alibi</name>
+  <vicinity>33-35 Oxford Street, Manchester</vicinity>
+  <type>bar</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4764950</lat>
+    <lng>-2.2426370</lng>
+   </location>
+  </geometry>
+  <rating>4.0</rating>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CnRnAAAAUsso-9z39anoauRGh2tUCSXOuAt01lIfOl_o2vwrc_QhSGgJ5aPxt6TxHVpsCPa0yaVVlygojm899Qmp5Tt_vKfNxh4-OHwLb4xfIVL4UM_ZNgyPP8BtQR4T50mwxL_3ngCHEiWhPg47js8U_y0kvhIQRaL3FGTcxwUYfpQRidv0qhoUqgnjWTf0AS9__uI8PDlY99AurmA</reference>
+  <id>a08bb63cb8996c583a839a2c931b02ca71cdaaf6</id>
+  <opening_hours>
+   <open_now>true</open_now>
+  </opening_hours>
+ </result>
+ <result>
+  <name>True</name>
+  <vicinity>50 Peter Street</vicinity>
+  <type>bar</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4779340</lat>
+    <lng>-2.2461350</lng>
+   </location>
+  </geometry>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CnRhAAAA9B4-gxMrcnOsk-ym11uQ9jla0gdAkTcR2Xc_Ffc-RvPCZ-twwwxWxLwPpTwVHf_Z4eWgXCkdz4C4aAwpf8hpiYo136uNzcpsiHuRpO8Z4bpX16sjcvmCWOQ1nNScR_GDAlarlBSFXiOTqaDMzpBCfxIQzRWHNT04Nx2jMJA1yRua0xoUD469dKbYQKBxLEgNu6jT5XT71wA</reference>
+  <id>6b20cd972fac3ce75b1793285798685914e11295</id>
+ </result>
+ <result>
+  <name>110 Restaurant and Bar</name>
+  <vicinity>110 Portland Street, Manchester</vicinity>
+  <type>bar</type>
+  <type>restaurant</type>
+  <type>food</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4765460</lat>
+    <lng>-2.2422210</lng>
+   </location>
+  </geometry>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CoQBdAAAAHSvr3O3bZUtxf4My052vNISi5zf6GlBPaTluSmPI9fA_aH9Nh8Sk2biWJYkyvyiEjS8ZwVvMrvWR7xutFO-ONRBJ8RaLR8bxog5muovbQbxpVkdEuSoDmUOp4WYIr3SD6zoEKxRB39i3w0H1jKjMzCTNKwHdRnae_UogkRXTqpAEhBf2bnN9aivKw--rty9W0_pGhSWO_7kB3vpH6NVsJnCmCsZM7yLjw</reference>
+  <id>30a0fa87dadafad567ec9d2c40e8f2dd3d15988c</id>
+ </result>
+ <result>
+  <name>The Waterhouse</name>
+  <vicinity>67-71 Princess Street, Manchester</vicinity>
+  <type>bar</type>
+  <type>restaurant</type>
+  <type>food</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4791740</lat>
+    <lng>-2.2431020</lng>
+   </location>
+  </geometry>
+  <rating>3.8</rating>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CnRrAAAAoNBQPPhGWguU4CUC_LE5r0F_trIeWIm0ZtC0v4pPPc71EVaetHlmLNQB2hp1ZBva_o7gBqWb9YAY5F9SI9rHESBvq6pmiWoYlWC8qcjbfgER8rrANv0LRt2Zs1OoRA1dI6Nsm5eiQisrw9ofgNo_bBIQP9CJTFyG61ji9BPy3uYdMRoU2czHTNcblRDrefdaRyLf899Tpak</reference>
+  <id>1b8aec49126448c4278c6060ff8f383244433527</id>
+  <opening_hours>
+   <open_now>true</open_now>
+  </opening_hours>
+  <photo>
+   <photo_reference>CnRoAAAAj6PRJoZA_wcbonG11KlSs7HWGgUGKx8PcbHJepQKZxx781rvHzoGhsqW9KlKSIqcJ6fe93s4B5hCnEDWlA5OpaX_w0uJLWOSnuKRGP8pI3yFyqGHPK1x-_JzIQztr_U1UF8Puh_cwFBlxmbbEeX0-hIQwHHjPT4EVQeRwoCfnBkoGBoUYqEQY9E6f9WHGUOUo1QYtZpbBpA</photo_reference>
+   <width>1280</width>
+   <height>800</height>
+   <html_attribution>&lt;a href="https://plus.google.com/101656605900977916907"&gt;Hamed kafashzadeh&lt;/a&gt;</html_attribution>
+  </photo>
+  <price_level>1</price_level>
+ </result>
+ <result>
+  <name>One Central Club</name>
+  <vicinity>1 Central Street, Central Street, Manchester, Manchester City Centre</vicinity>
+  <type>bar</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4786460</lat>
+    <lng>-2.2460470</lng>
+   </location>
+  </geometry>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CnRuAAAAuaffbytY9tGe2DVTDHUJI6wdXOBHwxWIIrpzr4w8DnkzfuiP6EXVFwZh7QdbfxjzsoM0fAwr_zXQNB5uv0lDQjUXXWY8ZZ1gKwalh0HCQtKdRzzPmo18Q0dz-6LWuihNXD3Lzb7sDOuwLH2c7Id5OhIQ6cr_tyPbzb2k9ototmiFzhoUyqiwlHqYgmE3E2e5LCBzUB7WqJk</reference>
+  <id>ebfd6c7400ced620cff3501f2d0571aefd74cc73</id>
+  <opening_hours>
+   <open_now>true</open_now>
+  </opening_hours>
+  <photo>
+   <photo_reference>CmReAAAAyXKJi3Vzyq1r3k2EHHbIdweR1TUQ2QVqMxeE-EadFwF34ASUJkLJev6mHev77TJDmdejxQx962StNJptlfACd2zKlo8-qm55Q3zm0Rz_4MGsYLHE_1nNE4PZgvs1mS56EhBuZI1dpcbqESmaESq-OQiYGhQgLRxuv5b_u1Nu6LR7rIpgI7XwXQ</photo_reference>
+   <width>792</width>
+   <height>1188</height>
+  </photo>
+ </result>
+ <result>
+  <name>Henry s Cafe Bar</name>
+  <vicinity>Lower Mosley Street, Manchester</vicinity>
+  <type>bar</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4762040</lat>
+    <lng>-2.2453420</lng>
+   </location>
+  </geometry>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CnRtAAAAEyuHOc2nz1v11WaS-u2CXOp16apGQTmtrfJB5yXeiY4sbYcRe2uukcbizbUgZW5Gc-iAcXnsKqvhQvToVUS5z4Lg-vaHzYq0RiPcXJtykHsZtLPdk9uGZnIOXgma74bEmNuoM1eDKTMLOrQEbotPJhIQYr4_q-uyuEm8O3k3aNqXGxoUPyrDsTaqOuR6yWm9H8ocuJturFE</reference>
+  <id>72d9f8bf7da2e005d56a6596fbf8e122943d0e99</id>
+ </result>
+ <result>
+  <name>Tiger Lounge</name>
+  <vicinity>Waldorf House, 5 Cooper Street, Manchester</vicinity>
+  <type>bar</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4791590</lat>
+    <lng>-2.2425680</lng>
+   </location>
+  </geometry>
+  <rating>3.6</rating>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CnRqAAAA7nkKEZqL_ZhOgFB5N17Bzm278XqdtiO4mts1YNFP1KMSeeoTY2AfWokOr9-wILl_ESkTDu_GxpCyoY6gXld715kvAmqjtv1YDx0pdtSCI2sXONTPjx9UGUP3IdVroeQWeNXVqvGcJUmfTJvIiWHeKRIQ0IvTHIlruGI81M7A8PVp3BoUrzIgNo_qh5eJqD5Jwu8GY1-aYk0</reference>
+  <id>e2d75969b3ea4019b09cdd2cbdb4b998c1f45b25</id>
+  <opening_hours>
+   <open_now>true</open_now>
+  </opening_hours>
+ </result>
+ <result>
+  <name>City Arms</name>
+  <vicinity>46-48 Kennedy Street, Manchester</vicinity>
+  <type>bar</type>
+  <type>restaurant</type>
+  <type>food</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4793280</lat>
+    <lng>-2.2429360</lng>
+   </location>
+  </geometry>
+  <rating>4.4</rating>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CnRmAAAA-J4WMZ9n7YVo0txWozqXNoigH09nLstLswpB9AZkoDO_L7pi8EfxsAHaBCm_24dCvLB-d8udp9lsWVU6uRuzZGyuubt90_BZQUW_MvSVBlt2qdhwOjUqatJfUl6Vej2lDs75PcruJI56hh2gGVWFQBIQm6ivjXR5wMaeNwNDvxSvuxoUN4wBrySRqNBYMvZ4RkuWgLPX2CI</reference>
+  <id>542ae4374b2bc413d5d26c0d4e4b50eb825ae6f8</id>
+  <photo>
+   <photo_reference>CnRpAAAAlODpL-tOQT1sBdlqxWzDif2pVyLvwWcFuekEfhRiL80IQWsKn189Yu13eXwfB8dZ8P2BZBuqWBAuAT1Z26qzO6cDfEdOqVTK9bRqguTFeLWKpEzzxGwaeQUUFXO8zpn0DGJHlzTkQK2wv_d5ll9iDRIQEY5kYiM88yEeDb_RKNIwCBoU1jY4vW8b84E0F7QBUpPqcnwVSVA</photo_reference>
+   <width>1632</width>
+   <height>1224</height>
+   <html_attribution>&lt;a href="https://plus.google.com/111134306232954413346"&gt;Nigel Mower&lt;/a&gt;</html_attribution>
+  </photo>
+ </result>
+ <result>
+  <name>Opus Restaurant</name>
+  <vicinity>Radisson Edwardian Hotel Manchester, Free Trade Hall, Peter Street, Manchester</vicinity>
+  <type>bar</type>
+  <type>restaurant</type>
+  <type>food</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4774530</lat>
+    <lng>-2.2469580</lng>
+   </location>
+  </geometry>
+  <rating>4.4</rating>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CnRsAAAAtltXqOD269P95NbFBUfMdgBuhd44Oms9uhbB4mix0zkgL-W6F7Wt1sk8QftpF4yMeZfGsahfEvOZPwE5EwQDQHOKtiSnXKMpy3HaStDagAbeBVK2g7rIFWwpn0uYWCZBXLHxWb2Qpry2MWCqo6s4NBIQMFWyGvNe-FiBahPUpLj5eRoUL83qNaY1Ocdj6zR0-g5cgrL_GDM</reference>
+  <id>ddfbfea742b162436e60ff07c546448ad19d8f05</id>
+  <opening_hours>
+   <open_now>true</open_now>
+  </opening_hours>
+  <photo>
+   <photo_reference>CpQBgQAAAGVMb-nuMb4pmlSc_v9pQb1jeEdJsUKQgkKruS2n973ZEvA9D7qeWdQcuN8I9gQTHBN-17eSB87TYlCwAKtPFVFTpSNiaSv5lQQvRVWU6D1vrC5xhvUBRXdFjxpdS3L3PiwdW6evNdHInEALGvOMcbf-j_52mSRjfAGEz-xQy8cy0tZl5rpTCVgAF6uucvCtSxIQ5Z8XksMKNngVU53jr-F0vxoUN_RRyY_ijBZjwIxWiWyoNUCvflU</photo_reference>
+   <width>2323</width>
+   <height>1626</height>
+  </photo>
+  <price_level>3</price_level>
+ </result>
+ <result>
+  <name>The Vine Inn</name>
+  <vicinity>44 Kennedy Street, Manchester</vicinity>
+  <type>bar</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4794120</lat>
+    <lng>-2.2430600</lng>
+   </location>
+  </geometry>
+  <rating>4.2</rating>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CnRqAAAAtJ-0VWDPCT1RhkipOlb6-aPuId0AgtbKWSoKuzMEjTspSwSrvkatbcW-f5bxXsW7EIaIs4Uxh2tXltP644RwyrlIa03dO4sARMw1-iRVdesbbpuTrv0WuydS9-iRq7DfkOLqIWUPtf3b-0niPy0xORIQxKG98Xqxuya9OrThMkcyJBoUbGSDR8PkK5_J7hgvH-UtPktQA0U</reference>
+  <id>bdacf5814858edb478cf469bba03374054928d83</id>
+  <opening_hours>
+   <open_now>true</open_now>
+  </opening_hours>
+ </result>
+ <result>
+  <name>Stalls Cafe Bar</name>
+  <vicinity>The Bridgewater Hall, Lower Mosley Street, Manchester</vicinity>
+  <type>cafe</type>
+  <type>bar</type>
+  <type>food</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4760540</lat>
+    <lng>-2.2455770</lng>
+   </location>
+  </geometry>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png</icon>
+  <reference>CnRtAAAAnEl3-b4ZjhlJ1Ntl7uvQc_-s6-MdC2Lj6O26M234EkrsYO7qxJm1A97CV0PAGlqzGWsxVY1xFAaJupaam2CccRka44HOecZbkdr8ukTiC-KWzIvV5ZHAwQQI9vxtfVfKN6FcOQ6qHRVZOyS3Ti7MTBIQwvH7dPWMe8iVQ2vLbyGoIBoUxO6e__S8HXK58uiGCpsu9UXCAKI</reference>
+  <id>0012fc0f636054a280c8cebe85c343578f00d452</id>
+ </result>
+ <result>
+  <name>Bannatyne's Health Club</name>
+  <vicinity>Canada House, 3 Chepstow Street, Manchester</vicinity>
+  <type>gym</type>
+  <type>bar</type>
+  <type>health</type>
+  <type>spa</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4757600</lat>
+    <lng>-2.2435250</lng>
+   </location>
+  </geometry>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/fitness-71.png</icon>
+  <reference>CoQBdAAAANAZcb6ZOnWvUeZlDqbWBCAJlEelu26HQ2980nqh9SNeyUbqWPbRn836Ho8pTPG4hpDqDTm0TmO06Ao5rco5AjK2Psqroi98IilOXwTsVd_rdD7L6tuoGUmg8dmMOdBvhdtEWZ8_1QoJPlUgYnKqUcBho_cY-uiYDyUTvBGkX8B5EhDD8MM8OoFPBJyanEtzAB6jGhRQh5uC41I3McE9UQru-GHek7x8AQ</reference>
+  <id>8ad4fa84b820df651c1f5135c62f06936bebec1d</id>
+  <opening_hours>
+   <open_now>true</open_now>
+  </opening_hours>
+  <photo>
+   <photo_reference>CoQBeQAAAEA6m5u1PDxmUtatqdzYiHjt3Ouk9tamBjFXdN_QuSSrPZTNxPPG7ZkmL13Ml_Jk2UYbFld2yTxYa7UK94jkM-3EHv5AFmsabdQ_NiR3YSMu1Ibvw6Qz9WkV1Mr5kKMrQvSnnPg2IQz86G9OlOE5elAQ7LRiqP8bOnzlLWT3OT9fEhAZvLVIkyEb6DmoZgV6X_pLGhSTXzPYSl8VV4k6-EAJUYYuVuHY0A</photo_reference>
+   <width>709</width>
+   <height>471</height>
+  </photo>
+ </result>
+ <result>
+  <name>Fab Cafe</name>
+  <vicinity>Gainsborough House, 109 Portland Street, Manchester</vicinity>
+  <type>bar</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4770100</lat>
+    <lng>-2.2408300</lng>
+   </location>
+  </geometry>
+  <rating>3.8</rating>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CnRlAAAAUjCfE7XasJ_QsdPcydo_CN9c8FHHwY8_DQl__UlL5sCON8boX_HMbGoPmrPuDSYfM5toZPjlU4z_HlKR7fJwIDMy2cj53xc0yFrLl0rG6DU5bBsKBMT2BZBhoSfFekkOtTycFa781CbXrP_sfmxM1xIQU1XzGOtAVrXAXFRfkAGeOxoUHt-m_SA9fGy1Ej4lPeMWbvNxbx8</reference>
+  <id>8fe46dd983ec633722b94fc8da8be093ee0da1d8</id>
+  <photo>
+   <photo_reference>CoQBdgAAAKzWmqr5iDCe9bF_oUg45yJ5Bu4A_GmizdztMbNOAKc7FRGmnqacCufaQyzWlqNcHquJlaM0JsyIrhkZoBvLILJYYZi0Oyns5Wl_PN2geFVborFDDN4N--8q9ar4SBG0i4c4gcFtt26aW-MiOrtXv67QQgCIflFnZv_JEBJ08YU9EhD4v4bU3iXwBcMLeaOhMx_wGhSn268Z2hoYZl5ZGM26qzFQu_g3WA</photo_reference>
+   <width>1400</width>
+   <height>1120</height>
+   <html_attribution>From a Google User</html_attribution>
+  </photo>
+ </result>
+ <result>
+  <name>Albert Square</name>
+  <vicinity>11 Peter Street, Manchester</vicinity>
+  <type>bar</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4794700</lat>
+    <lng>-2.2453300</lng>
+   </location>
+  </geometry>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CnRrAAAAqU5ngY0fkcN2ZrMtRoLzIBnc4F8kWgBEWuK1uRQRpzl8Cpnwl0bI2mJywuWSCDUbfx4TSIuWGfTsgINnL8IIRfCie2x0QthlQ3ichU8TNozaLswGpSvTFgIuzBvPgJcsaa3zB37Mihd1JSIDCJ41RhIQTLx6GbDg7KjRS2XBJ7MOyxoUEceYfcMOubQ3dKvXm_aRNVo9L14</reference>
+  <id>469c5d152e33959c52d65d29313bd142ee7f4689</id>
+ </result>
+ <result>
+  <name>The Slug And Lettuce</name>
+  <vicinity>Ground Floor, Heron House, Albert Square, A6042, Manchester</vicinity>
+  <type>bar</type>
+  <type>restaurant</type>
+  <type>food</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4793360</lat>
+    <lng>-2.2459020</lng>
+   </location>
+  </geometry>
+  <rating>3.2</rating>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CoQBcQAAADxxcakkIcoy7VaeX_ZoMDN3sBDJhjantfgBc37LfSW8Pj9zhuAKrrzkDRsyTQcnZjlcemsKPnf0A7lcCpasbUQlCpSlxXheiOaDptO8TcPs_8_0F2nVfJhvvgJ2Fpr0HmOsk278qLcWdvb6FlMMs_g8ZQYxObbRM7cBhA-Pm0yvEhDzuAeT0n5uRjrxjxQnt7PnGhSNMtd4eIjR5yeCJhOrEC3UcG_Fmg</reference>
+  <id>c35627590e5856f9d9af88ee7a7131748f7eb121</id>
+  <opening_hours>
+   <open_now>true</open_now>
+  </opening_hours>
+  <photo>
+   <photo_reference>CoQBdAAAAOP1a_D94CwEE9IbEpKwLlghL-waI3dqUFuanqGoz0bhUuX2pSYo4zJYlNXeWHQ738tIXnPecWDl5076_obWyQa_jxo3gGOekUW4a7Qmag9p4tS3N4AlxJ0S1PGCSH_queo0LWeFCnOAnWZXLFF4Jysi2WzmQ0wYz1toFEmsVdigEhDxZ-xbsmIDxCQJEYvSAjpgGhSdAaXK0u_UxPTJmo2Jy7eS4h5JBQ</photo_reference>
+   <width>2048</width>
+   <height>1536</height>
+  </photo>
+ </result>
+ <result>
+  <name>BrewDog Manchester</name>
+  <vicinity>35 Peter Street, Manchester</vicinity>
+  <type>bar</type>
+  <type>establishment</type>
+  <geometry>
+   <location>
+    <lat>53.4780880</lat>
+    <lng>-2.2473260</lng>
+   </location>
+  </geometry>
+  <rating>4.1</rating>
+  <icon>http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png</icon>
+  <reference>CnRvAAAAgobhQ0fuUeAbQFtudkxc4wAgyjVAO7lp7vXdsDlMKDvsPzDFwD0uI5YKgkl-f9br5XSy19dYv2JV_3sYWtSGrn7iBdxJkuyK6WMRawDjiWkIXOsFcPAaLJH6QYAyJ8yMVMrgw3GVVIjg-_EVcV7TkxIQfJNur1dzlc68hKemecFomRoU8pSr1o849FYB97nK8_7QSHzqvU8</reference>
+  <id>94cbab28e6f213a8d374c3acc43c18952ccdee24</id>
+  <opening_hours>
+   <open_now>true</open_now>
+  </opening_hours>
+  <photo>
+   <photo_reference>CoQBcgAAADXIHyujOmGPrMjagkJ11guQ2o4Qh-X_Yn4y742jEfOsQKk5c7XuJJUg5EOmyg546wFpciS9B5pV-Slj77JpRcNkWTIDnkJQefIwh9idxZjUA-M0Qbm0g2H6H3ib7g9lpyNGKhmuIrVGKL8PrlGuIfOJ4CzTRjPBlbGwDfJM-yq6EhBIbltNwBF9n0C259-Q-QpdGhTgAvxVVdMEmm0V6vy38w18HvG7EA</photo_reference>
+   <width>1024</width>
+   <height>681</height>
+   <html_attribution>&lt;a href="https://plus.google.com/111967638313189911795"&gt;John Coleman&lt;/a&gt;</html_attribution>
+  </photo>
+ </result>
+ <next_page_token>ClROAAAAP90jxwS6M8b5UeJusezQwjsvyNdDXeDOK0hrB5f_QTfKYaLPiQRlhIYvEapq4qJW5NVzeFnLze98arqPVGXugmoV1d8xr1Ht2dGNOFOfEucSELf0cIw9PC7_OBjQGzlEZ40aFCImEgnAtlKVLZlg_jHYN9thM94H</next_page_token>
+</PlaceSearchResponse>

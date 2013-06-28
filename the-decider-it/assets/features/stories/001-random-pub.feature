@@ -4,6 +4,6 @@ Feature: Random pub in Manchester
   So that I don't have to decide for myself where to drink
 
   Scenario: Starting app gives a random pub
-    When I start the app
+    When I wait for the app to load
     Then I should be given a random pub name
 

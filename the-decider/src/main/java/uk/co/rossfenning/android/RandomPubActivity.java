@@ -3,15 +3,14 @@ package uk.co.rossfenning.android;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
-import uk.co.rossfenning.android.client.PlaceSearchClient;
+import android.widget.TextView;
+import uk.co.rossfenning.android.model.PlaceSearchResponse;
+import uk.co.rossfenning.android.model.Result;
+
+import java.util.List;
+
 
 public class RandomPubActivity extends Activity {
-
-    private PlaceSearchClient client;
-
-    public RandomPubActivity() {
-        this.client = new PlaceSearchClient();
-    }
 
     /**
      * Called when the activity is first created.
@@ -23,7 +22,17 @@ public class RandomPubActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        final PlaceSearchResponse response
+            = (PlaceSearchResponse) this.getIntent().getSerializableExtra("response");
+
+        final List<Result> results = response.getResults();
+        final Result firstResult = results.get(0);
+
         setContentView(R.layout.activity_main);
+
+        final TextView pubView = (TextView) findViewById(R.id.pub_name);
+        pubView.setText(firstResult.getName());
 
     }
 
