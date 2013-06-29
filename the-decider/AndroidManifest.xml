@@ -20,5 +20,8 @@
         </activity>
     </application>
 
+    <instrumentation
+        android:name="cucumber.api.android.CucumberInstrumentation"
+        android:targetPackage="uk.co.rossfenning.android"/>
 
 </manifest>

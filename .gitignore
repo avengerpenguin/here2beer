@@ -22,3 +22,4 @@ local.properties
 /the-decider-it/target/
 /the-decider/nbactions.xml
 /target/
+/the-decider/res/values/strings.xml

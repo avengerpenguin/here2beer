@@ -20,7 +20,7 @@ public class RandomPubActivity extends Activity {
      * onSaveInstanceState(Bundle). <b>Note: Otherwise it is null.</b>
      */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         final PlaceSearchResponse response

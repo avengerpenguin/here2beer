@@ -1,10 +1,13 @@
 package uk.co.rossfenning.android.client;
 
+import org.apache.commons.io.IOUtils;
 import org.simpleframework.xml.core.Persister;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import uk.co.rossfenning.android.model.PlaceSearchResponse;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
@@ -25,9 +28,12 @@ public class PlaceSearchClient implements HttpClient<PlaceSearchResponse> {
             
             logger.info("Opening stream...");
             final InputStream responseStream = urlConnection.getInputStream();
+            final String response = IOUtils.toString(responseStream, "UTF-8");
+            logger.info("Got response: " + response);
             logger.info("Parsing response...");
-            return new Persister().read(PlaceSearchResponse.class, responseStream);
-        } catch (final Exception ex) {
+            return new Persister().read(PlaceSearchResponse.class, response);
+        }
+        catch (final Exception ex) {
             logger.info("Bad error: " + ex.getMessage());
             throw new RuntimeException(ex);
         }
