@@ -6,13 +6,11 @@ env:
     - PLATFORM_VERSION=17 ANDROID_SDKS=android-17,sysimg-17 ANDROID_TARGET=android-17  ANDROID_ABI=armeabi-v7a
 
 before_install:
-  # Work around issues with 64 bit
-  - sudo apt-get update -qq
-  - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch > /dev/null; fi
 
-  # Get the SDK
-  - wget http://dl.google.com/android/android-sdk_r22.0.1-linux.tgz
-  - tar -zxf android-sdk_r22.0.1-linux.tgz
+  - sudo apt-get update -qq
+  - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch; fi
+  - wget http://dl.google.com/android/android-sdk_r21-linux.tgz
+  - tar -zxf android-sdk_r21-linux.tgz
 
   # Set up required environment
   - export ANDROID_HOME=`pwd`/android-sdk-linux
