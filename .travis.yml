@@ -12,6 +12,9 @@ before_install:
   # Set up required environment
   - export ANDROID_HOME=`pwd`/android-sdk-linux
   - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/build-tools/17.0.0
+  - ln -s ${ANDROID_HOME}/build-tools/17.0.0/aapt ${ANDROID_HOME}/platform-tools/aapt
+  - ln -s ${ANDROID_HOME}/build-tools/17.0.0/lib ${ANDROID_HOME}/platform-tools/lib
+  - ln -s ${ANDROID_HOME}/build-tools/17.0.0/aidl ${ANDROID_HOME}/platform-tools/aidl
 
   # Install the API and SDK bits we need
   - echo y | android update sdk --no-ui --filter platform-tools,android-15,sysimg-15 --force
