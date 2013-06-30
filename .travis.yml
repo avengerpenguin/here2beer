@@ -1,7 +1,7 @@
 language: java
 env:
   matrix:
-    - ANDROID_SDKS=sysimg-15            ANDROID_TARGET=android-15  ANDROID_ABI=armeabi-v7a
+    - ANDROID_SDKS=android-15,sysimg-15            ANDROID_TARGET=android-15  ANDROID_ABI=armeabi-v7a
 
 before_install:
   # Work around issues with 64 bit
@@ -18,7 +18,7 @@ before_install:
 
   # Install the API and SDK bits we need
   - echo y | android update sdk --no-ui --filter platform-tools,android-15,sysimg-15 --force
-  - android update sdk --filter platform-tools,android-16,extra-android-support,$ANDROID_SDKS --no-ui --force > /dev/null
+  - echo y | android update sdk --filter platform-tools,extra-android-support,$ANDROID_SDKS --no-ui --force > /dev/null
 
   - ln -s ${ANDROID_HOME}/build-tools/17.0.0/aapt ${ANDROID_HOME}/platform-tools/aapt
   - ln -s ${ANDROID_HOME}/build-tools/17.0.0/lib ${ANDROID_HOME}/platform-tools/lib
