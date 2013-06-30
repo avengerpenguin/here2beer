@@ -14,7 +14,7 @@ before_install:
   - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/build-tools/17.0.0
 
   # Install the API and SDK bits we need
-  - yes y | android update sdk --no-ui --filter platform-tools,android-15,sysimg-15 --force
+  - echo -e 'y\ny' | android update sdk --no-ui --filter platform-tools,android-15,sysimg-15 --force
 
   # Create and start emulator
   - android list targets
