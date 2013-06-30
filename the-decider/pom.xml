@@ -248,7 +248,7 @@
                                 <phase>verify</phase> 
                                 <configuration> 
                                     <sdk> 
-                                        <platform>17</platform> 
+                                        <platform>${platform.sdk.version}</platform> 
                                     </sdk> 
                                     <lint> 
                                         <skip>false</skip> 

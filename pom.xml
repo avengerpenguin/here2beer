@@ -56,7 +56,7 @@
                     <version>${android.plugin.version}</version>
                     <configuration>
                         <sdk>
-                            <platform>15</platform>
+                            <platform>${sdk.platform.version}</platform>
                         </sdk>
                         <zipalign>
                             <verbose>true</verbose>
