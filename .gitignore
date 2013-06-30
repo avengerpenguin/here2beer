@@ -18,3 +18,8 @@ local.properties
 # Eclipse project files
 .classpath
 .project
+/the-decider/target/
+/the-decider-it/target/
+/the-decider/nbactions.xml
+/target/
+/the-decider/res/values/strings.xml
