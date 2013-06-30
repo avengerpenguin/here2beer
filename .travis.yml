@@ -6,6 +6,8 @@ env:
     - PLATFORM_VERSION=16 ANDROID_SDKS=android-16,sysimg-16 ANDROID_TARGET=android-16  ANDROID_ABI=armeabi-v7a
     - PLATFORM_VERSION=17 ANDROID_SDKS=android-17,sysimg-17 ANDROID_TARGET=android-17  ANDROID_ABI=armeabi-v7a
 
+  secure: "WoDA89luNEDF2moVdh4f2wFtPKjw/MyXwoA1ffykxP6SErcpop4rpaU2RrQA\nQK3nbBiDQd8o2+TsCav+2EitiFLWdWGeIgkfjOe6C94LV+4PpBTwzz3UFHmr\n40k5euVNdPqIwXKz+WUTX2/trejlIYt0rX+yW2xE6PIPCJwHn0g="
+
 before_install:
 
   - sudo apt-get update -qq
@@ -33,4 +35,4 @@ notifications:
   irc: "irc.carlcrowder.com#travis"
 
 install: mvn -e validate
-script: mvn -e integration-test -Dandroid.device=test -Dsdk.platform.version=$PLATFORM_VERSION
+script: mvn -e integration-test -Dandroid.device=test -Dsdk.platform.version=$PLATFORM_VERSION -Dgoogle.api.key=$GOOGLE_API_KEY
