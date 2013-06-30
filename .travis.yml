@@ -1,4 +1,7 @@
 language: java
+env:
+  matrix:
+    - ANDROID_SDKS=sysimg-15            ANDROID_TARGET=android-15  ANDROID_ABI=armeabi-v7a
 
 before_install:
   # Work around issues with 64 bit
@@ -12,16 +15,18 @@ before_install:
   # Set up required environment
   - export ANDROID_HOME=`pwd`/android-sdk-linux
   - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/build-tools/17.0.0
+
+  # Install the API and SDK bits we need
+  - echo y | android update sdk --no-ui --filter platform-tools,android-15,sysimg-15 --force
+  - android update sdk --filter platform-tools,android-16,extra-android-support,$ANDROID_SDKS --no-ui --force > /dev/null
+
   - ln -s ${ANDROID_HOME}/build-tools/17.0.0/aapt ${ANDROID_HOME}/platform-tools/aapt
   - ln -s ${ANDROID_HOME}/build-tools/17.0.0/lib ${ANDROID_HOME}/platform-tools/lib
   - ln -s ${ANDROID_HOME}/build-tools/17.0.0/aidl ${ANDROID_HOME}/platform-tools/aidl
 
-  # Install the API and SDK bits we need
-  - echo y | android update sdk --no-ui --filter platform-tools,android-15,sysimg-15 --force
-
   # Create and start emulator
   - android list targets
-  - echo no | android create avd --force -n test -t android-15 --abi armeabi-v7a
+  - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
   - emulator -avd test -no-skin -no-audio -no-window &
 
 before_script:
@@ -32,4 +37,4 @@ notifications:
   irc: "irc.carlcrowder.com#travis"
 
 install: mvn -e validate
-script: mvn -e integration-test
+script: mvn -e integration-test -Dandroid.device=test
