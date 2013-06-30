@@ -19,7 +19,7 @@ public class PlaceSearchClient implements HttpClient<PlaceSearchResponse> {
     @Override
     public PlaceSearchResponse fetch(final URL url) {
         try {
-            logger.info("Opening connection...");
+            logger.info("Opening connection to: " + url);
             URLConnection urlConnection = url.openConnection();
             urlConnection.setReadTimeout(10 * 1000);
             urlConnection.setConnectTimeout(20 * 1000);
