@@ -26,6 +26,10 @@ before_install:
   - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
   - emulator -avd test -no-skin -no-audio -no-window &
 
+  - ln -s ${ANDROID_HOME}/build-tools/17.0.0/aapt ${ANDROID_HOME}/platform-tools/aapt
+  - ln -s ${ANDROID_HOME}/build-tools/17.0.0/lib ${ANDROID_HOME}/platform-tools/lib
+  - ln -s ${ANDROID_HOME}/build-tools/17.0.0/aidl ${ANDROID_HOME}/platform-tools/aidl
+
 before_script:
     # Make sure the emulator has started before running tests
     - adb wait-for-device
