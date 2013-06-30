@@ -1,13 +1,28 @@
 language: java
+
 before_install:
-  - sudo apt-get install ia32-libs
+  # Work around issues with 64 bit
+  - sudo apt-get update -qq
+  - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch > /dev/null; fi
+
+  # Get the SDK
   - wget http://dl.google.com/android/android-sdk_r22.0.1-linux.tgz
   - tar -zxf android-sdk_r22.0.1-linux.tgz
+
+  # Set up required environment
   - export ANDROID_HOME=`pwd`/android-sdk-linux
   - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/build-tools/17.0.0
-  - ${ANDROID_HOME}/tools/android list sdk --no-ui
-  - echo y | android update sdk --no-ui --filter 1,2,4,5,6 --force
-  - ls ${ANDROID_HOME}/{tools,platform-tools,build-tools/17.0.0}
-  - chmod a+x platform-tools/aapt
+
+  # Install the API and SDK bits we need
+  - echo y | android update sdk --no-ui --filter platform-tools,android-{15,16,17} --force
+
+  # Create and start emulator
+  - echo no | android create avd --force -n test -t android-15 --abi armeabi
+  - emulator -avd test -no-skin -no-audio -no-window &
+
+before_script:
+    # Make sure the emulator has started before running tests
+    - ./wait_for_emulator
+
 notifications:
   irc: "irc.carlcrowder.com#travis"
