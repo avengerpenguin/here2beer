@@ -27,3 +27,6 @@ before_script:
 
 notifications:
   irc: "irc.carlcrowder.com#travis"
+
+install: mvn validate
+script: mvn integration-test
