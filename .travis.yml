@@ -17,6 +17,7 @@ before_install:
   - echo y | android update sdk --no-ui --filter platform-tools,android-15,sysimg-15 --force
 
   # Create and start emulator
+  - android list targets
   - echo no | android create avd --force -n test -t android-15 --abi armeabi
   - emulator -avd test -no-skin -no-audio -no-window &
 
