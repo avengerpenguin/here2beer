@@ -2,7 +2,7 @@ language: java
 jdk: oraclejdk7
 env:
   global:
-   - secure: "WoDA89luNEDF2moVdh4f2wFtPKjw/MyXwoA1ffykxP6SErcpop4rpaU2RrQA\nQK3nbBiDQd8o2+TsCav+2EitiFLWdWGeIgkfjOe6C94LV+4PpBTwzz3UFHmr\n40k5euVNdPqIwXKz+WUTX2/trejlIYt0rX+yW2xE6PIPCJwHn0g="
+    - secure: "Jylxxpl0KmY/gMvyt9kBxp1tQuP8/H1ZGzqCOA/nTzAMDQRGErPBIpRpiQM0\nAP+R58UMEHN0RdXlldHrucpRsvxTMtlWJ4tz7xlmK8BLCMK4WnJCwLt5DWaY\ndHwGTmjlSKaubehl/4j5nLwJkKfURIcWNylJS8YwbATCn7iRsyk="
   matrix:
     - ANDROID_SDKS=android-15,sysimg-15 ANDROID_TARGET=android-15  ANDROID_ABI=armeabi-v7a
     - ANDROID_SDKS=android-16,sysimg-16 ANDROID_TARGET=android-16  ANDROID_ABI=armeabi-v7a
