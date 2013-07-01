@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1001" android:versionName="0.2.0-SNAPSHOT" package="uk.co.rossfenning.android.here2beer">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1001" android:versionName="0.2.0" package="uk.co.rossfenning.android.here2beer">
 
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="15"/>
 
