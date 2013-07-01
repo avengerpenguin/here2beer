@@ -14,5 +14,5 @@ import java.util.List;
 public class PlaceSearchResponse implements Serializable {
 
     @ElementList(inline = true, name="item")
-    private List<Result> results;
+    private List<Place> results;
 }

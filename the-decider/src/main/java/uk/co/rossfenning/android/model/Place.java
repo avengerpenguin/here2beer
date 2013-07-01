@@ -9,8 +9,8 @@ import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
-@Root(strict=false)
-public class Result implements Serializable {
+@Root(strict=false, name="result")
+public class Place implements Serializable {
 
     @Element
     private String name;

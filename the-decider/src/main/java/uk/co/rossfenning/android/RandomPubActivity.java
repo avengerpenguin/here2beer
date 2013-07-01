@@ -5,9 +5,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.widget.TextView;
 import uk.co.rossfenning.android.model.PlaceSearchResponse;
-import uk.co.rossfenning.android.model.Result;
+import uk.co.rossfenning.android.model.Place;
 
 import java.util.List;
+import java.util.Random;
 
 
 public class RandomPubActivity extends Activity {
@@ -26,13 +27,14 @@ public class RandomPubActivity extends Activity {
         final PlaceSearchResponse response
             = (PlaceSearchResponse) this.getIntent().getSerializableExtra("response");
 
-        final List<Result> results = response.getResults();
-        final Result firstResult = results.get(0);
+        final List<Place> results = response.getResults();
+        final Place randomPlace = results.get(
+            new Random(System.currentTimeMillis()).nextInt(results.size()));
 
         setContentView(R.layout.activity_main);
 
         final TextView pubView = (TextView) findViewById(R.id.pub_name);
-        pubView.setText(firstResult.getName());
+        pubView.setText(randomPlace.getName());
 
     }
 
