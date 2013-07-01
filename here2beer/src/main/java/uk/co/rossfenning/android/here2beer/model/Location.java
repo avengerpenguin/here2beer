@@ -9,15 +9,12 @@ import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
-@Root(strict = false, name = "result")
-public class Place implements Serializable {
+@Root(strict=false, name="location")
+public class Location implements Serializable {
 
-    @Element
-    private String name;
+    @Element(name="lat")
+    private double latitude;
 
-    @Element
-    private String vicinity;
-
-    @Element
-    private Geometry geometry;
+    @Element(name="lng")
+    private double longitude;
 }

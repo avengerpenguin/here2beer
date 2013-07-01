@@ -100,12 +100,31 @@ public class MainActivitySteps extends ActivityInstrumentationTestCase2<MainActi
         waitForPubSuggestion();
     }
 
+    @UiThreadTest
     @Then("^I should see its address$")
     public void assertAddressPresent() {
-        // Express the Regexp above with the code you wish you had
         final TextView addressView
             = (TextView) solo.getView(uk.co.rossfenning.android.here2beer.R.id.pub_address);
         assertThat(addressView.getText().toString(), not(isEmptyOrNullString()));
     }
     
+    @Given("^I have been suggested a pub$")
+    public void pubHasBeenSuggested() {
+        waitForPubSuggestion();
+    }
+
+    @UiThreadTest
+    @When("^I press the button saying \"([^\"]*)\"$")
+    public void pressButton(final String text) {
+        // Express the Regexp above with the code you wish you had
+        solo.clickOnText(text);
+    }
+
+    @UiThreadTest
+    @Then("^I should be sent to Google Maps to show walking directions to the suggested pub$")
+    public void assertGoogleMapsLoaded() {
+        assertTrue(solo.waitForLogMessage(
+            "START u0 {act=android.intent.action.VIEW dat=http://maps.google.com/maps", 60000));
+    }
+
 }

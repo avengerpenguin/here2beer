@@ -19,6 +19,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
+        
+        <Button
+            android:id="@+id/directions_button"
+            android:text="Get Directions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
     </LinearLayout>
 
 </RelativeLayout>

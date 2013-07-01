@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
                 final Location location = MainActivity.this.getLocation();
 
                 if (location == null) {
-                    new AlertDialog.Builder(MainActivity.this, AlertDialog.THEME_HOLO_LIGHT)
+                    new AlertDialog.Builder(MainActivity.this)
                         .setTitle("Could not find location")
                         .setMessage("Could not detect your location, sorry.")
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
     public Location getLocation() {
 
         final Criteria criteria = new Criteria();
-        criteria.setAccuracy(Criteria.ACCURACY_LOW);
+        criteria.setAccuracy(Criteria.NO_REQUIREMENT);
         final LocationManager locationManager =
             (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
