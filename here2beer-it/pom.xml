@@ -40,14 +40,20 @@
             <groupId>uk.co.rossfenning.android</groupId>
             <artifactId>here2beer</artifactId>
             <type>apk</type>
-            <version>0.0.0</version>
+            <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>uk.co.rossfenning.android</groupId>
             <artifactId>here2beer</artifactId>
             <type>jar</type>
-            <version>0.0.0</version>
+            <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>info.cukes</groupId>
