@@ -1,10 +1,10 @@
-package uk.co.rossfenning.android.client;
+package uk.co.rossfenning.android.here2beer.client;
 
 import org.apache.commons.io.IOUtils;
 import org.simpleframework.xml.core.Persister;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import uk.co.rossfenning.android.model.PlaceSearchResponse;
+import uk.co.rossfenning.android.here2beer.model.PlaceSearchResponse;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

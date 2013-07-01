@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="0.0.0" package="uk.co.rossfenning.android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1001" android:versionName="0.1.1" package="uk.co.rossfenning.android.here2beer">
 
-    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="16"/>
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="15"/>
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
-    <application android:allowBackup="true" android:debuggable="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity">
+    <application android:allowBackup="true" android:debuggable="false" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".RandomPubActivity"
-            android:label="Random Pub" >
+        <activity android:label="Finding pub..." android:name=".SplashActivity">
+        </activity>
+        <activity android:label="Random Pub" android:name=".PubActivity">
         </activity>
     </application>
-
-    <instrumentation
-        android:name="cucumber.api.android.CucumberInstrumentation"
-        android:targetPackage="uk.co.rossfenning.android"/>
 
 </manifest>

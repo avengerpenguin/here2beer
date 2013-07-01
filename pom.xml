@@ -3,10 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
   
     <groupId>uk.co.rossfenning.android</groupId>
-    <artifactId>the-decider-parent</artifactId>
-    <version>0.0.0</version>
+    <artifactId>here2beer-parent</artifactId>
+    <version>0.1.1</version>
     <packaging>pom</packaging>
-    <name>the-decider - Parent</name>
+    <name>Here to Beer - Parent</name>
   
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -49,7 +49,7 @@
                         <encoding>UTF-8</encoding>
                     </configuration>
                 </plugin>
-        
+          
                 <plugin>
                     <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                     <artifactId>android-maven-plugin</artifactId>
@@ -72,7 +72,7 @@
             </plugins>
         </pluginManagement>
     </build>
-  
+    
     <profiles>
         <profile>
             <!-- the standard profile runs the instrumentation tests -->
@@ -81,8 +81,8 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <modules>
-                <module>the-decider</module>
-                <module>the-decider-it</module>
+                <module>here2beer</module>
+                <module>here2beer-it</module>
             </modules>
         </profile>
         <profile>
@@ -98,13 +98,20 @@
                 </property>
             </activation>
             <modules>
-                <module>the-decider</module>
+                <module>here2beer</module>
             </modules>
         </profile>
     </profiles>
-  
-    <modules>
-        <module>the-decider</module>
-        <module>the-decider-it</module>
-    </modules>
+
+    <scm>
+        <developerConnection>scm:git:ssh://github.com/avengerpenguin/here2beer</developerConnection>
+    </scm>  
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-avengerpenguin-maven-here2beer</id>
+            <name>avengerpenguin-maven-here2beer</name>
+            <url>https://api.bintray.com/maven/avengerpenguin/maven/here2beer</url>
+        </repository>
+    </distributionManagement>
 </project>

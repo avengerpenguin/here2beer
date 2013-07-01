@@ -1,17 +1,17 @@
-package uk.co.rossfenning.android;
+package uk.co.rossfenning.android.here2beer;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.TextView;
-import uk.co.rossfenning.android.model.PlaceSearchResponse;
-import uk.co.rossfenning.android.model.Place;
+import uk.co.rossfenning.android.here2beer.model.PlaceSearchResponse;
+import uk.co.rossfenning.android.here2beer.model.Place;
 
 import java.util.List;
 import java.util.Random;
 
 
-public class RandomPubActivity extends Activity {
+public class PubActivity extends Activity {
 
     /**
      * Called when the activity is first created.
@@ -31,7 +31,7 @@ public class RandomPubActivity extends Activity {
         final Place randomPlace = results.get(
             new Random(System.currentTimeMillis()).nextInt(results.size()));
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_pub);
 
         final TextView pubView = (TextView) findViewById(R.id.pub_name);
         pubView.setText(randomPlace.getName());

@@ -5,39 +5,49 @@
 
     <properties>
         <cucumber.version>1.1.4-SNAPSHOT</cucumber.version>
+        <platform.sdk.version>15</platform.sdk.version>
     </properties>
 
     <parent>
         <groupId>uk.co.rossfenning.android</groupId>
-        <artifactId>the-decider-parent</artifactId>
-        <version>0.0.0</version>
+        <artifactId>here2beer-parent</artifactId>
+        <version>0.1.1</version>
     </parent>
 
     <groupId>uk.co.rossfenning.android</groupId>
-    <artifactId>the-decider-it</artifactId>
-    <version>0.0.0</version>
+    <artifactId>here2beer-it</artifactId>
+    <version>0.1.1</version>
     <packaging>apk</packaging>
-    <name>the-decider-it - Integration tests</name>
+    <name>Here to Beer - Integration tests</name>
 
     <dependencies>
         <dependency>
             <groupId>com.google.android</groupId>
             <artifactId>android-test</artifactId>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>hamcrest-core</artifactId>
+                    <groupId>org.hamcrest</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>xpp3</artifactId>
+                    <groupId>xpp3</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>uk.co.rossfenning.android</groupId>
-            <artifactId>the-decider</artifactId>
+            <artifactId>here2beer</artifactId>
             <type>apk</type>
             <version>0.0.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>uk.co.rossfenning.android</groupId>
-            <artifactId>the-decider</artifactId>
+            <artifactId>here2beer</artifactId>
             <type>jar</type>
             <version>0.0.0</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>info.cukes</groupId>
@@ -67,6 +77,18 @@
             <version>1.6.1-RC1</version>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>com.jayway.android.robotium</groupId>
+            <artifactId>robotium-solo</artifactId>
+            <version>4.0</version>
+        </dependency>
+        <dependency>
+            <artifactId>xpp3</artifactId>
+            <groupId>xpp3</groupId>
+            <type>jar</type>
+            <version>1.1.3.3</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -94,7 +116,7 @@
                         <!--</packages> -->
                     </test>
                     <sdk>
-                        <platform>${sdk.platform.version}</platform>
+                        <platform>${platform.sdk.version}</platform>
                     </sdk>
                 </configuration>
                 <extensions>true</extensions>

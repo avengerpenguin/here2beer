@@ -1,5 +1,6 @@
-package uk.co.rossfenning.android.client;
+package uk.co.rossfenning.android.here2beer.client;
 
+import uk.co.rossfenning.android.here2beer.client.PlaceSearchClient;
 import org.junit.Test;
 
 import java.io.IOException;

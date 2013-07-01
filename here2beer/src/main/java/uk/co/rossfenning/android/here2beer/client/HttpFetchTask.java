@@ -1,4 +1,4 @@
-package uk.co.rossfenning.android.client;
+package uk.co.rossfenning.android.here2beer.client;
 
 import android.app.Activity;
 import android.content.Intent;

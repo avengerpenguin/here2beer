@@ -1,4 +1,4 @@
-package uk.co.rossfenning.android.model;
+package uk.co.rossfenning.android.here2beer.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
