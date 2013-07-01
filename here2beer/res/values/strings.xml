@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <string name="app_name">Here to Beer</string>
-    <string name="action_settings">Settings</string>
-    <string name="finding_pub">Finding pub...</string>
-    <string name="google_key">AIzaSyCIi3ehVCLRmfZIvCHRbX6l9kJZF9MsejI</string>
-
-</resources>
