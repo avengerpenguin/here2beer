@@ -14,4 +14,7 @@ public class Place implements Serializable {
 
     @Element
     private String name;
+    
+    @Element
+    private String vicinity;
 }

@@ -36,6 +36,8 @@ public class PubActivity extends Activity {
         final TextView pubView = (TextView) findViewById(R.id.pub_name);
         pubView.setText(randomPlace.getName());
 
+        final TextView addressView = (TextView) findViewById(R.id.pub_address);
+        addressView.setText(randomPlace.getVicinity());
     }
 
     @Override

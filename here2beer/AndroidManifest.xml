@@ -15,9 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:label="Finding pub..." android:name=".SplashActivity">
+        <activity android:label="@string/app_name" android:name=".SplashActivity">
         </activity>
-        <activity android:label="Random Pub" android:name=".PubActivity">
+        <activity android:label="@string/app_name" android:name=".PubActivity">
         </activity>
     </application>
 

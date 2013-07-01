@@ -1,22 +1,20 @@
 package uk.co.rossfenning.android.here2beer.test;
 
-import android.app.Instrumentation.ActivityMonitor;
 import android.content.Context;
+import android.content.Intent;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.UiThreadTest;
 import android.widget.TextView;
-import com.jayway.android.robotium.solo.Condition;
 import com.jayway.android.robotium.solo.Solo;
+import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import uk.co.rossfenning.android.here2beer.PubActivity;
-import uk.co.rossfenning.android.here2beer.SplashActivity;
 import uk.co.rossfenning.android.here2beer.MainActivity;
 
 import java.lang.reflect.InvocationTargetException;
@@ -25,20 +23,20 @@ import java.lang.reflect.Method;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-public class Here2BeerSteps extends ActivityInstrumentationTestCase2<MainActivity> {
+public class MainActivitySteps extends ActivityInstrumentationTestCase2<MainActivity> {
 
     private Solo solo;
     private LocationManager locationManager;
     private MainActivity mainActivity;
 
-    public Here2BeerSteps() {
+    public MainActivitySteps() {
         super("uk.co.rossfenning.android.here2beer", MainActivity.class);
     }
 
     @Before
     public void resetApp() {
         mainActivity = getActivity();
-        solo = new Solo(getInstrumentation(), getActivity());
+        solo = new Solo(getInstrumentation(), mainActivity);
     }
     
     @After
@@ -69,7 +67,7 @@ public class Here2BeerSteps extends ActivityInstrumentationTestCase2<MainActivit
         testLocation.setAccuracy(0f);
 
         final Method locationJellyBeanFixMethod = Location.class.getMethod("makeComplete");
-        if (locationJellyBeanFixMethod != null) {
+        if (locationJellyBeanFixMethod != null && locationJellyBeanFixMethod.isAccessible()) {
             locationJellyBeanFixMethod.invoke(testLocation);
         }
 
@@ -80,9 +78,9 @@ public class Here2BeerSteps extends ActivityInstrumentationTestCase2<MainActivit
 
     @UiThreadTest
     @When("^I press the button for a random pub suggestion$")
-    public void waitForSplashScreen() {
+    public void waitForPubSuggestion() {
 
-        solo.clickOnText("Take me here to beer!");
+        solo.clickOnText("Take me from here to beer!");
         solo.waitForActivity("SplashActivity", 60000);
         solo.waitForActivity("PubActivity", 60000);
     }
@@ -97,18 +95,17 @@ public class Here2BeerSteps extends ActivityInstrumentationTestCase2<MainActivit
         assertThat(textView.getText().toString(), isIn(pubNames.split(",")));
     }
 
-    @UiThreadTest
-    @Given("^my device is unable to give my location for some reason$")
-    public void setDeviceUnableToDoLocation() {
-        mainActivity = getActivity();
-        locationManager = (LocationManager) mainActivity.getSystemService(Context.LOCATION_SERVICE);
-        locationManager.setTestProviderEnabled("test", false);
-        locationManager.getProvider("passive");
+    @When("^I am suggested a pub$")
+    public void pubSuggested() {
+        waitForPubSuggestion();
     }
 
-    @UiThreadTest
-    @Then("^I should get an error message saying my location is unavailable$")
-    public void assertErrorMessage() {
-        assertThat(solo.searchText("Could not detect your location, sorry."), is(true));
+    @Then("^I should see its address$")
+    public void assertAddressPresent() {
+        // Express the Regexp above with the code you wish you had
+        final TextView addressView
+            = (TextView) solo.getView(uk.co.rossfenning.android.here2beer.R.id.pub_address);
+        assertThat(addressView.getText().toString(), not(isEmptyOrNullString()));
     }
+    
 }
