@@ -266,7 +266,6 @@
                             </zipalign>
                             <manifest>
                                 <debuggable>false</debuggable>
-                                <version
                                 <versionCodeAutoIncrement>false</versionCodeAutoIncrement>
                                 <versionCodeUpdateFromVersion>true</versionCodeUpdateFromVersion>
                             </manifest>
