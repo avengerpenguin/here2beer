@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">The Decider</string>
+    <string name="hello">Hello the-decider!</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="finding_pub">Finding pub...</string>
+    <string name="google_key">AIzaSyCqVERdNC5vcYodgYXwkjLWPfSbCER8Kq8</string>
+
+</resources>
