@@ -35,6 +35,7 @@ before_script:
 
 notifications:
   irc: "irc.carlcrowder.com#travis"
+  email: false
 
 install: mvn -e validate
 script: mvn -e integration-test -Dandroid.device=test -Dsdk.platform.version=$PLATFORM_VERSION -Dgoogle.api.key=$GOOGLE_API_KEY
