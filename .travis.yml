@@ -4,9 +4,9 @@ env:
   global:
     - secure: "Jylxxpl0KmY/gMvyt9kBxp1tQuP8/H1ZGzqCOA/nTzAMDQRGErPBIpRpiQM0\nAP+R58UMEHN0RdXlldHrucpRsvxTMtlWJ4tz7xlmK8BLCMK4WnJCwLt5DWaY\ndHwGTmjlSKaubehl/4j5nLwJkKfURIcWNylJS8YwbATCn7iRsyk="
   matrix:
-    - ANDROID_SDKS=android-15,sysimg-15 ANDROID_TARGET=android-15  ANDROID_ABI=armeabi-v7a
-    - ANDROID_SDKS=android-16,sysimg-16 ANDROID_TARGET=android-16  ANDROID_ABI=armeabi-v7a
-    - ANDROID_SDKS=android-17,sysimg-17 ANDROID_TARGET=android-17  ANDROID_ABI=armeabi-v7a
+    - SDK_VERSION=15 ANDROID_SDKS=android-15,sysimg-15 ANDROID_TARGET=android-15  ANDROID_ABI=armeabi-v7a
+    - SDK_VERSION=16 ANDROID_SDKS=android-16,sysimg-16 ANDROID_TARGET=android-16  ANDROID_ABI=armeabi-v7a
+    - SDK_VERSION=17 ANDROID_SDKS=android-17,sysimg-17 ANDROID_TARGET=android-17  ANDROID_ABI=armeabi-v7a
 
 
 before_install:
@@ -39,4 +39,4 @@ notifications:
   email: false
 
 install: mvn -e validate
-script: mvn -e integration-test -Dandroid.device=test -Dgoogle.api.key=$GOOGLE_API_KEY
+script: mvn -e integration-test -Dandroid.device=test -Dgoogle.api.key=$GOOGLE_API_KEY -Dplatform.sdk.version=$SDK_VERSION
