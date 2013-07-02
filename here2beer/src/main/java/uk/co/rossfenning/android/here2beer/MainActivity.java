@@ -16,11 +16,18 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 
+    private final PubRequest pubRequest = new PubRequest();
+    
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final RadiusSelectorView radiusSelectorView
+            = (RadiusSelectorView) findViewById(R.id.radius_selector);
+        
+        radiusSelectorView.setPubRequest(pubRequest);
+        
         final Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(final View v) {
@@ -40,8 +47,11 @@ public class MainActivity extends Activity {
                         }).show();
                 }
                 
+                pubRequest.setLatitude(location.getLatitude());
+                pubRequest.setLongitude(location.getLongitude());
+                
                 final Intent randomIntent = new Intent(MainActivity.this, SplashActivity.class);
-                randomIntent.putExtra("location", location);
+                randomIntent.putExtra("pub_request", pubRequest);
                 MainActivity.this.startActivity(randomIntent);
             }
         });
@@ -74,4 +84,9 @@ public class MainActivity extends Activity {
 
         return location;
     }
+
+    public PubRequest getPubRequest() {
+        return pubRequest;
+    }
+
 }

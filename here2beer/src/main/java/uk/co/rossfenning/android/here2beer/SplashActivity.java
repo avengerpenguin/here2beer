@@ -22,7 +22,7 @@ import java.net.URL;
 
 public class SplashActivity extends Activity {
 
-    private HttpClient<PlaceSearchResponse> client;
+    private final HttpClient<PlaceSearchResponse> client;
 
     public SplashActivity() throws MalformedURLException, IOException {
 
@@ -34,15 +34,15 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        final Location location
-            = (Location) this.getIntent().getParcelableExtra("location");
+        final PubRequest pubRequest
+            = (PubRequest) this.getIntent().getSerializableExtra("pub_request");
 
         URL url;
         try {
             url = new URL("https://maps.googleapis.com/maps/api/place/nearbysearch/xml?key="
                 + getString(R.string.google_key)
-                + "&location=" + location.getLatitude() + "," + location.getLongitude()
-                + "&rankby=distance&sensor=false&types=bar");
+                + "&location=" + pubRequest.getLatitude() + "," + pubRequest.getLongitude()
+                + "&radius=" + pubRequest.getRadius() + "&sensor=false&types=bar");
 
             final ConnectivityManager connectivityManager
                 = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);

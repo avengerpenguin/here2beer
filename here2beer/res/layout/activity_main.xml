@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:custom="http://schemas.android.com/apk/res/com.example.customviews"
               android:layout_width="fill_parent" 
               android:layout_height="fill_parent" 
               android:orientation="vertical" >
@@ -9,4 +10,9 @@
             android:layout_height="wrap_content"
             android:text="Take me from here to beer!"
             android:gravity="center"/>
+    
+    <uk.co.rossfenning.android.here2beer.RadiusSelectorView
+        android:id="@+id/radius_selector"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
 </LinearLayout>

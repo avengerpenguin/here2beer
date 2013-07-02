@@ -1,21 +1,23 @@
 package uk.co.rossfenning.android.here2beer.test;
 
 import android.content.Context;
-import android.content.Intent;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.UiThreadTest;
+import android.view.DragEvent;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.TextView;
 import com.jayway.android.robotium.solo.Solo;
-import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import uk.co.rossfenning.android.here2beer.MainActivity;
+import uk.co.rossfenning.android.here2beer.RadiusSelectorView;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -127,4 +129,12 @@ public class MainActivitySteps extends ActivityInstrumentationTestCase2<MainActi
             "START u0 {act=android.intent.action.VIEW dat=http://maps.google.com/maps", 60000));
     }
 
+    @UiThreadTest
+    @When("^I set the radius of the search to \"(\\d+\\.?\\d*) miles\"$")
+    public void setRadius(final String radius) {
+        final RadiusSelectorView view
+            = (RadiusSelectorView) solo.getView(uk.co.rossfenning.android.here2beer.R.id.radius_selector);
+        assertNotNull(view);
+        mainActivity.getPubRequest().setRadius(Float.parseFloat(radius) * 1609.344f);
+    }
 }
