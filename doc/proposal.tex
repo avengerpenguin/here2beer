@@ -1,9 +1,18 @@
 \documentclass{article}
 
+\usepackage{fullpage}
 \usepackage{listings}
 
-\title{Here to Beer}
-\subtitle{Android Assessment Proposal}
+\lstset{
+  breaklines=false,
+  frame=single,
+  basicstyle=\scriptsize,
+  keepspaces=true,
+  extendedchars=true,
+  escapeinside={\%*}{*)}
+}
+
+\title{From Here to Beer\\ \vspace{2 mm}{\large Android Assessment Proposal}}
 \author{Ross Fenning}
 
 \begin{document}
@@ -60,12 +69,11 @@ shaped at the end of each iteration.
 
 \subsection{User Stories}
 
-\lstinputlisting{../here2beer/assets/features/stories/001-random-pub.feature}
-\lstinputlisting{../here2beer/assets/features/stories/002-address.feature}
-\lstinputlisting{../here2beer/assets/features/stories/003-directions.feature}
-\lstinputlisting{../here2beer/assets/features/stories/004-change-radius.feature}
-\lstinputlisting{../here2beer/assets/features/stories/005-another-suggestion.feature}
-\lstinputlisting{../here2beer/assets/features/stories/006-favourites.feature}
-
+\lstinputlisting{stories/001-random-pub.feature}
+\lstinputlisting{stories/002-address.feature}
+\lstinputlisting{stories/003-directions.feature}
+\lstinputlisting{stories/004-change-radius.feature}
+\lstinputlisting{stories/005-another-suggestion.feature}
+\lstinputlisting{stories/006-favourites.feature}
 
 \end{document}
