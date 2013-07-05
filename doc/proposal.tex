@@ -2,11 +2,12 @@
 
 \usepackage{fullpage}
 \usepackage{listings}
+\usepackage{graphicx}
 
 \lstset{
   breaklines=false,
   frame=single,
-  basicstyle=\scriptsize,
+  basicstyle=\footnotesize,
   keepspaces=true,
   extendedchars=true,
   escapeinside={\%*}{*)}
@@ -32,14 +33,13 @@ to store their favourite pubs to remind them which pubs they liked.
 The target user base is that of anyone facing indecision when out looking for
 pubs or who simply wishes to throw some randomness into their evening by
 choosing their pub at random. Through this application, people may be suggested
-pubs they otherwise would not have tried or perhaps they don not even know
+pubs they otherwise would not have tried or perhaps they do not even know
 those pubs existed previously.
 
 The intention is to allow some control of the search radius to please both
 people wanting immediately nearby pubs and those willing to make a longer
 walk out of it. The app should also allow the ability to ``roll again'' and
 choose another pub if they do not like the first suggestion.
-
 The app should also endeavour to offer a gracefully degraded experience in
 the case that services such as location or network are not available,
 although its utility is likely to be very limited with those services.
@@ -51,6 +51,9 @@ Tools such as \emph{Cucumber-JVM} provide the ability to write tests based
 on user stories first and then ensure each iteration does not introduce
 defects to existing features. Continuous integration and the Android
 Instrumentation class will allow each iteration to be tested before release.
+It should also be possible to evaluate the app and its usability at each
+iteration so as to use that feedback to guide the prioritisation of
+further features.
 
 \section{Specification}
 
@@ -63,17 +66,43 @@ nature of any \emph{Agile} methodology means that we can adapt to change
 in the requirements and features as the project develops, which teaches
 us that there is limited merit in writing hundreds of requirements at the
 point of project at which we have the least information -- the start. With
-this is mind, this proposal will include a handful of user requirements for
+this in mind, this proposal will include a handful of user requirements for
 an acceptable early baseline of the app and further requirements can be
 shaped at the end of each iteration.
 
-\subsection{User Stories}
-
+\section{User Stories}
+\vspace*{\fill}
 \lstinputlisting{stories/001-random-pub.feature}
+\vspace*{\fill}
 \lstinputlisting{stories/002-address.feature}
+\vspace*{\fill}
 \lstinputlisting{stories/003-directions.feature}
+\vspace*{\fill}
 \lstinputlisting{stories/004-change-radius.feature}
+\vspace*{\fill}
+\pagebreak
+\vspace*{\fill}
 \lstinputlisting{stories/005-another-suggestion.feature}
+\vspace*{\fill}
 \lstinputlisting{stories/006-favourites.feature}
+\vspace*{\fill}
+
+\section{Design}
+
+Whilst the final design will be evolved as features are added, some mock
+designs of the first activity are given in figures 1 and 2.
+
+\vspace*{\fill}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[height=3in]{../design/main_phone_near.png}
+  \caption{User is about to request a pub within 0.1 miles}
+\end{figure}
+\begin{figure}[p]
+  \centering
+  \includegraphics[height=3in]{../design/main_phone.png}
+  \caption{User is about to request a pub further out up to 5 miles away}
+\end{figure}
 
 \end{document}
