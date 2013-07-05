@@ -1,4 +1,4 @@
-Feature: Change radius of pub search
+Feature: Ability to change radius of the pub search
   As someone who doesn't want to walk very far or is willing to walk quite a distance
   I want suggested pubs within a radius smaller or larger than the default
   So that I have a shorter or longer walk to find beer, depending on my preference
