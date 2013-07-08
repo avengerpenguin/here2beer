@@ -33,7 +33,7 @@ public class FindActivity extends Activity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_find);
 
         final PubRequest pubRequest
             = (PubRequest) this.getIntent().getSerializableExtra("pub_request");
@@ -64,6 +64,7 @@ public class FindActivity extends Activity {
                         
                         final Intent intent = new Intent(FindActivity.this, PubActivity.class);
                         intent.putExtra("pub", randomPub);
+                        intent.putExtra("request", pubRequest);
                         FindActivity.this.startActivity(intent);
                         FindActivity.this.finish();
                     }

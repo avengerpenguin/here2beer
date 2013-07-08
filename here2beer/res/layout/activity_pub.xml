@@ -7,6 +7,14 @@
                 android:paddingTop="@dimen/activity_vertical_margin">
 
     <LinearLayout android:orientation="vertical" android:layout_centerVertical="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/star_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/star"
+            android:visibility="invisible"
+        />
         <TextView
             android:id="@+id/pub_name"
             android:layout_width="wrap_content"
@@ -27,13 +35,23 @@
             android:text="@string/get_directions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"/>
+
+        <Button
+            android:id="@+id/fav_button"
+            android:text="@string/save_favourites"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"/>
 
         <fragment android:name="uk.co.rossfenning.android.here2beer.TakeMeHereToBeerFragment"
-              android:id="@+id/button_fragment"
-              android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:gravity="center"/>
+                  android:id="@+id/button_fragment"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:layout_marginTop="24dp"/>
     </LinearLayout>
 
 </RelativeLayout>

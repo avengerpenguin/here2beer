@@ -13,6 +13,9 @@ import java.io.Serializable;
 public class Pub implements Serializable {
 
     @Element
+    private String id;
+
+    @Element
     private String name;
 
     @Element
@@ -20,4 +23,9 @@ public class Pub implements Serializable {
 
     @Element
     private Geometry geometry;
+    
+    @Override
+    public String toString() {
+        return name;
+    }
 }

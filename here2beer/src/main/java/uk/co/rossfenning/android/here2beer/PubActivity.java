@@ -14,8 +14,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
-import uk.co.rossfenning.android.here2beer.model.PlaceSearchResponse;
+import android.widget.Toast;
 import uk.co.rossfenning.android.here2beer.model.Pub;
 
 
@@ -23,29 +24,24 @@ public class PubActivity extends FragmentActivity {
 
     private SensorManager sensorManager;
     private ShakeEventListener sensorListener;
+    private Pub pub;
+    private FavouritesDAO favDao = new FavouritesDAO(this);
+    private PubRequest pubRequest;
 
-    /**
-     * Called when the activity is first created.
-     *
-     * @param savedInstanceState If the activity is being re-initialized after previously being shut
-     * down then this Bundle contains the data it most recently supplied in
-     * onSaveInstanceState(Bundle). <b>Note: Otherwise it is null.</b>
-     */
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        final PlaceSearchResponse response = (PlaceSearchResponse) this.getIntent().getSerializableExtra("response");
-
-        final Pub randomPub = (Pub) this.getIntent().getSerializableExtra("pub");
+        this.pub = (Pub) this.getIntent().getSerializableExtra("pub");
+        this.pubRequest = (PubRequest) this.getIntent().getSerializableExtra("request");
         
         setContentView(R.layout.activity_pub);
 
         final TextView pubView = (TextView) findViewById(R.id.pub_name);
-        pubView.setText(randomPub.getName());
+        pubView.setText(pub.getName());
 
         final TextView addressView = (TextView) findViewById(R.id.pub_address);
-        addressView.setText(randomPub.getVicinity());
+        addressView.setText(pub.getVicinity());
 
         final Button directionsButton = (Button) findViewById(R.id.directions_button);
         directionsButton.setOnClickListener(new View.OnClickListener() {
@@ -60,12 +56,45 @@ public class PubActivity extends FragmentActivity {
                     "http://maps.google.com/maps?saddr=%s,%s&daddr=%s,%s&directionsmode=walking",
                     currentLocation.getLatitude(),
                     currentLocation.getLongitude(),
-                    randomPub.getGeometry().getLocation().getLatitude(),
-                    randomPub.getGeometry().getLocation().getLongitude())));
+                    pub.getGeometry().getLocation().getLatitude(),
+                    pub.getGeometry().getLocation().getLongitude())));
 
-                startActivity(intent);
+                    PubActivity.this.finish();
+                    startActivity(intent);
             }
         });
+
+        final ImageView imageView = (ImageView) findViewById(R.id.star_view);
+        final Button favouritesButton = (Button) findViewById(R.id.fav_button);
+
+        if (favDao.isFavourite(pub)) {
+            favouritesButton.setText(R.string.remove_favourites);
+            imageView.setVisibility(View.VISIBLE);
+            this.findViewById(R.layout.activity_pub).invalidate();
+        }
+
+        favouritesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (favDao.isFavourite(pub)) {
+                    favDao.removeFromFavourites(pub);
+                    Toast.makeText(PubActivity.this, pub.getName() + " removed from favourites.", 1).show();
+                    favouritesButton.setText(R.string.save_favourites);
+                    imageView.setVisibility(View.INVISIBLE);
+                }
+                else {
+                    favDao.addToFavourites(pub);
+                    Toast.makeText(PubActivity.this, pub.getName() + " saved to favourites.", 1).show();
+                    favouritesButton.setText(R.string.remove_favourites);
+                    imageView.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        final TakeMeHereToBeerFragment fragment
+            = (TakeMeHereToBeerFragment) getSupportFragmentManager().findFragmentById(R.id.button_fragment);
+
+        fragment.setPubRequest(pubRequest);
 
         final Button anotherButton = (Button) findViewById(R.id.button);
         anotherButton.setText(R.string.somewhere_else);
@@ -95,13 +124,6 @@ public class PubActivity extends FragmentActivity {
         super.onStop();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
     public Location getLocation() {
 
         final Criteria criteria = new Criteria();
@@ -120,5 +142,10 @@ public class PubActivity extends FragmentActivity {
         }
 
         return location;
+    }
+
+    @Override
+    public void onBackPressed() {
+        PubActivity.this.finish();
     }
 }

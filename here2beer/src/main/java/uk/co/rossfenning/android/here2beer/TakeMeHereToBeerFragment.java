@@ -1,6 +1,5 @@
 package uk.co.rossfenning.android.here2beer;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -10,7 +9,6 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +18,7 @@ import android.widget.Button;
 
 public class TakeMeHereToBeerFragment extends Fragment {
 
-    private final PubRequest pubRequest = new PubRequest();
+    private PubRequest pubRequest = new PubRequest();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -83,5 +81,12 @@ public class TakeMeHereToBeerFragment extends Fragment {
      */
     public PubRequest getPubRequest() {
         return pubRequest;
+    }
+
+    /**
+     * @param pubRequest the pubRequest to set
+     */
+    public void setPubRequest(final PubRequest pubRequest) {
+        this.pubRequest = pubRequest;
     }
 }
