@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -23,36 +24,51 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final TextView milesText = (TextView) findViewById(R.id.miles_text);
+        float radiusInMiles = pubRequest.getRadius() / 1609.344f;
+        milesText.setText(String.format("%.2f mile(s)", radiusInMiles));
+        
         final RadiusSelectorView radiusSelectorView
             = (RadiusSelectorView) findViewById(R.id.radius_selector);
         
         radiusSelectorView.setPubRequest(pubRequest);
         
+        radiusSelectorView.setOnRadiusChangedListener(new RadiusSelectorView.OnRadiusChangeListener() {
+
+            public void onRadiusChanged(final float newRadius) {
+                float radiusInMiles = newRadius / 1609.344f;
+                milesText.setText(String.format("%.2f mile(s)", radiusInMiles));
+            }
+        });
+        
         final Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
             public void onClick(final View v) {
 
                 final Location location = MainActivity.this.getLocation();
-
+                Log.d(getClass().getSimpleName(), "Final location: " + location);
                 if (location == null) {
                     new AlertDialog.Builder(MainActivity.this)
-                        .setTitle("Could not find location")
-                        .setMessage("Could not detect your location, sorry.")
+                        .setTitle("Could not find location.")
+                        .setMessage("Could not detect your location, sorry. Ensure you have a working GPS or network signal and try again.")
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
 
                             @Override
                             public void onClick(final DialogInterface di, final int i) {
-                                MainActivity.this.finish();
+                                // do nothing
                             }
                         }).show();
                 }
+                else {
+                    pubRequest.setLatitude(location.getLatitude());
+                    pubRequest.setLongitude(location.getLongitude());
                 
-                pubRequest.setLatitude(location.getLatitude());
-                pubRequest.setLongitude(location.getLongitude());
-                
-                final Intent randomIntent = new Intent(MainActivity.this, SplashActivity.class);
-                randomIntent.putExtra("pub_request", pubRequest);
-                MainActivity.this.startActivity(randomIntent);
+                    final Intent randomIntent = new Intent(MainActivity.this, SplashActivity.class);
+                    randomIntent.putExtra("pub_request", pubRequest);
+                    MainActivity.this.startActivity(randomIntent);
+                }
             }
         });
             
@@ -68,7 +84,7 @@ public class MainActivity extends Activity {
     public Location getLocation() {
 
         final Criteria criteria = new Criteria();
-        criteria.setAccuracy(Criteria.NO_REQUIREMENT);
+        criteria.setAccuracy(Criteria.ACCURACY_FINE);
         final LocationManager locationManager =
             (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 

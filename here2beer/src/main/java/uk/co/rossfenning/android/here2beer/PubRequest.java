@@ -8,6 +8,6 @@ import java.io.Serializable;
 public class PubRequest implements Serializable {
     private double latitude;
     private double longitude;
-    private float radius = 1000;
+    private float radius = 804.67200f;
 
 }

@@ -59,7 +59,7 @@ public class SplashActivity extends Activity {
 
             }
             else {
-                new AlertDialog.Builder(this, AlertDialog.THEME_HOLO_LIGHT)
+                new AlertDialog.Builder(this)
                     .setTitle("Internet Connection Required")
                     .setMessage("An active Internet connection is required to use this app.")
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {

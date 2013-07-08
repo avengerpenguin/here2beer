@@ -2,8 +2,10 @@
 <resources>
 
     <string name="app_name">From Here to Beer</string>
+    <string name="request_button">Take me from here to beer!</string>
     <string name="action_settings">Settings</string>
-    <string name="finding_pub">Finding pub...</string>
+    <string name="finding_pub">Finding pub&#8230;</string>
     <string name="google_key">${google.api.key}</string>
+    <string name="get_directions">Get Directions</string>
 
 </resources>

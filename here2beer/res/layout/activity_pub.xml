@@ -22,7 +22,7 @@
         
         <Button
             android:id="@+id/directions_button"
-            android:text="Get Directions"
+            android:text="@string/get_directions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
