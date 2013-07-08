@@ -13,16 +13,15 @@ public class HttpFetchTask<T extends Serializable>
 {
 
     private final HttpClient<T> client;
-    private final Activity callingActivity;
-    private final Class<Activity> nextActivity;
 
-    public HttpFetchTask(
-        final HttpClient<T> client,
-        final Activity callingActivity,
-        final Class<Activity> nextActivity)
-    {
-        this.callingActivity = callingActivity;
-        this.nextActivity = nextActivity;
+    private OnCompletionListener<T> listener;
+    
+    public interface OnCompletionListener<T2> {
+        void onCompletion(T2 response);
+    }
+    
+    public HttpFetchTask(final HttpClient<T> client, final OnCompletionListener<T> listener) {
+        this.listener = listener;
         this.client = client;
     }
 
@@ -36,9 +35,8 @@ public class HttpFetchTask<T extends Serializable>
 
     @Override
     protected void onPostExecute(final T response) {
-        Intent intent = new Intent(callingActivity, nextActivity);
-        intent.putExtra("response", response);
-        callingActivity.startActivity(intent);
-        callingActivity.finish();
+        if (listener != null) {
+            listener.onCompletion(response);
+        }
     }
 }

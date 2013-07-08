@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @Root(strict = false, name = "result")
-public class Place implements Serializable {
+public class Pub implements Serializable {
 
     @Element
     private String name;

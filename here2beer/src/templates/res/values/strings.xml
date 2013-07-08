@@ -7,5 +7,6 @@
     <string name="finding_pub">Finding pub&#8230;</string>
     <string name="google_key">${google.api.key}</string>
     <string name="get_directions">Get Directions</string>
+    <string name="somewhere_else">Take me somewhere else!</string>
 
 </resources>

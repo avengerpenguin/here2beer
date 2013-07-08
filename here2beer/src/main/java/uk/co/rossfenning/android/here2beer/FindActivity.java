@@ -5,9 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.location.Criteria;
-import android.location.Location;
-import android.location.LocationManager;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
@@ -15,16 +13,19 @@ import uk.co.rossfenning.android.here2beer.client.HttpClient;
 import uk.co.rossfenning.android.here2beer.client.PlaceSearchClient;
 import uk.co.rossfenning.android.here2beer.client.HttpFetchTask;
 import uk.co.rossfenning.android.here2beer.model.PlaceSearchResponse;
+import uk.co.rossfenning.android.here2beer.model.Pub;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
+import java.util.Random;
 
-public class SplashActivity extends Activity {
+public class FindActivity extends Activity {
 
     private final HttpClient<PlaceSearchResponse> client;
 
-    public SplashActivity() throws MalformedURLException, IOException {
+    public FindActivity() throws MalformedURLException, IOException {
 
         this.client = new PlaceSearchClient();
     }
@@ -53,8 +54,20 @@ public class SplashActivity extends Activity {
 
                 Log.i(getClass().getSimpleName(), "Fetching pub...");
 
-                final HttpFetchTask<PlaceSearchResponse> httpFetchTask
-                    = new HttpFetchTask(client, this, PubActivity.class);
+                final HttpFetchTask<PlaceSearchResponse> httpFetchTask = new HttpFetchTask(
+                    client, new HttpFetchTask.OnCompletionListener<PlaceSearchResponse>() {
+
+                    public void onCompletion(final PlaceSearchResponse response) {
+                        final List<Pub> results = response.getResults();
+                        final Pub randomPub = results.get(
+                            new Random(System.currentTimeMillis()).nextInt(results.size()));
+                        
+                        final Intent intent = new Intent(FindActivity.this, PubActivity.class);
+                        intent.putExtra("pub", randomPub);
+                        FindActivity.this.startActivity(intent);
+                        FindActivity.this.finish();
+                    }
+                });
                 httpFetchTask.execute(url);
 
             }
@@ -66,7 +79,7 @@ public class SplashActivity extends Activity {
 
                         @Override
                         public void onClick(final DialogInterface di, final int i) {
-                            SplashActivity.this.finish();
+                            FindActivity.this.finish();
                         }
                 })
                     .show();

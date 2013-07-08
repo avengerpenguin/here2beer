@@ -4,11 +4,9 @@ import android.content.Context;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
+import android.location.LocationProvider;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.UiThreadTest;
-import android.view.DragEvent;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.TextView;
 import com.jayway.android.robotium.solo.Solo;
 import cucumber.api.java.After;
@@ -58,7 +56,7 @@ public class MainActivitySteps extends ActivityInstrumentationTestCase2<MainActi
 
         if (null == locationManager.getProvider(testProvider)) {
             locationManager.addTestProvider(
-                "test", false, false, false, false, false, false, false,
+                testProvider, false, false, false, false, false, false, false,
                 Criteria.POWER_LOW, Criteria.ACCURACY_FINE);
         }
 
@@ -66,11 +64,15 @@ public class MainActivitySteps extends ActivityInstrumentationTestCase2<MainActi
         testLocation.setLatitude(latitude);
         testLocation.setLongitude(longitude);
         testLocation.setTime(System.currentTimeMillis());
-        testLocation.setAccuracy(0f);
 
-        final Method locationJellyBeanFixMethod = Location.class.getMethod("makeComplete");
-        if (locationJellyBeanFixMethod != null && locationJellyBeanFixMethod.isAccessible()) {
-            locationJellyBeanFixMethod.invoke(testLocation);
+        try {
+            final Method locationJellyBeanFixMethod = Location.class.getMethod("makeComplete");
+            if (locationJellyBeanFixMethod != null && locationJellyBeanFixMethod.isAccessible()) {
+                locationJellyBeanFixMethod.invoke(testLocation);
+            }
+        }
+        catch (final NoSuchMethodException error) {
+            // Only need to call that method if it exists
         }
 
         locationManager.setTestProviderEnabled(testProvider, true);
@@ -126,7 +128,7 @@ public class MainActivitySteps extends ActivityInstrumentationTestCase2<MainActi
     @Then("^I should be sent to Google Maps to show walking directions to the suggested pub$")
     public void assertGoogleMapsLoaded() {
         assertTrue(solo.waitForLogMessage(
-            "START u0 {act=android.intent.action.VIEW dat=http://maps.google.com/maps", 60000));
+            "act=android.intent.action.VIEW dat=http://maps.google.com/maps", 60000));
     }
 
     @UiThreadTest
@@ -136,5 +138,10 @@ public class MainActivitySteps extends ActivityInstrumentationTestCase2<MainActi
             = (RadiusSelectorView) solo.getView(uk.co.rossfenning.android.here2beer.R.id.radius_selector);
         assertNotNull(view);
         mainActivity.getPubRequest().setRadius(Float.parseFloat(radius) * 1609.344f);
+    }
+
+    @When("^I press the button for another suggestion$")
+    public void pressForAnother() {
+        solo.clickOnText("Take me somewhere else!");
     }
 }
