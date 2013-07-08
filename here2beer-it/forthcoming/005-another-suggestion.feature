@@ -1,4 +1,4 @@
-Feature: Request another suggestion
+Feature: Ability to request another pub suggestion
     As someone who doesn't like the pub that was suggested
     I want a quick way to request another suggestion
     So that I can perhaps find a place I am willing to visit

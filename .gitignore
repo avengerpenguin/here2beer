@@ -22,3 +22,13 @@ local.properties
 /here2beer/res/values/strings.xml
 /here2beer/target/
 /here2beer-it/target/
+/doc/stories
+/doc/proposal.aux
+/doc/proposal.log
+/doc/proposal.pdf
+/doc/evaluation.aux
+/doc/evaluation.log
+/doc/evaluation.pdf
+/doc/user-guide.aux
+/doc/user-guide.log
+/doc/user-guide.pdf

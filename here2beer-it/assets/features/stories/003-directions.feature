@@ -1,4 +1,4 @@
-Feature: Show directions to chosen pub
+Feature: Show directions to the suggested pub
   As someone who wishes to visit a suggested pub, but doesn't know the area well
   I want to be shown directions to that pub
   So that I can find it without relying on knowing street names
