@@ -66,7 +66,7 @@ was seen to be an improvement over small text aligned in the top-left
 by default. The address being in a smaller font was better for giving
 visual separation of the pub name from the address.
 
-The user saw the addition of the street address a very valuable improvement
+The user saw the addition of the street address as a very valuable improvement
 as the app is somewhat more practical when you are told where the pub is.
 
 \section{Show directions to the suggested pub}
@@ -142,6 +142,7 @@ because there are not that many pubs within the radius given.
 Both of these issues were added to the backlog.
 
 \section{Saving favourite pubs}
+\label{sec:favourites}
 \subsection{Requirements}
 
 The purpose of this feature is to allow a basic ability to mark certain
@@ -251,5 +252,84 @@ it clearer that a pub is being searched and the user should wait.
 
 \chapter{Final Evaluation}
 \label{chapter:evaluation}
+
+Much evaluation has been done along the way after each development
+iteration. A final user evaluation was then done with the entire
+app to date in mind.
+
+\section{Current State}
+
+The app is fully-functional for its primary purpose and is deemed
+to be usable in its current state. The layout is simplistic and
+minimalist -- not cluttered or confusing. The interface is
+reasonably clear enough to allow a user to find random pubs, but
+certainly lacks some of the visual design that would make the
+app a contender in a marketplace such as Google Play.
+
+There is a limitation with the Google Places API in that only 20
+pubs are returned at a time. It chooses the most prominent pubs
+or bars in the given radius, so this might pick the 20 ``best''
+places. However, if a user were looking for a wide-area search
+up to five miles, they may expect a random pub out of all
+pubs in that searh radius, not just the top twenty. This could
+be improved by paginating through the API for up to 60 results or
+perhaps getting the data from elsewhere.
+
+Also on the note of the data quality, it was pointed out that the
+app would sometimes return restaurants and not pubs. This is due
+to Google's attempts to scrape enough metadata about a place
+to establish what type of place it is. It marks things as
+``bars'' when they seem to be so (which is the type the app
+searches for), but this sometimes includes bar-restaurant
+establishments that would normally be seen as different to a
+pub as understood in British culture. Some of the lack of distinction
+between bar-restaurants and pubs comes from American culture. This
+is another case for finding a more pub-orientated data source
+say from CAMRA or Cask Marque.
+
+\section{Potential Improvements}
+
+\begin{itemize}
+\item
+  The most clear area for improvement is the need for a more
+  thorough approach to the overall design and aesthetics. The current
+  app is more of a wireframe and with the right amount of time dedicated
+  to the design alone, it could be made much more aesthetically-pleasing.
+\item
+  The Google Places API provides photos of the pubs, which is something
+  that could easily be added to the app's view.
+\item
+  The screen displaying a pub name could at least say how far away
+  the pub is (even a straight line distance) before the user has
+  to click for directions to find out that information.
+\end{itemize}
+
+\section{Long Term Ideas}
+
+\begin{itemize}
+\item
+  As noted in the previous section, it is worth exploring other
+  data sources more focused on pubs (or maybe specifically pubs
+  known for their quality).
+\item
+  The demo in section~\ref{sec:favourites} raised the idea for
+  a web service backing the app to store people's favourites so as
+  to use that collective information to indicate popular pubs, perhaps.
+\item
+  The screen displaying the pub's name could pull in all sorts of
+  rich information about a pub. Perhaps there could be reviews from
+  certain websites.
+\item
+  The app the could offer user journeys beyond the point of suggesting
+  the pub. If a user actually visits the suggested the pub, they could
+  be invited to mark that they visited it, review the pub, rate it, etc.
+\item
+  Further to the previous idea, the app could save a user's random
+  pub crawl for them to browse later. Perhaps it could allow users
+  to send each other suggested pub crawl routes. With this, the app
+  could evolve into something that helps build full pub crawl routes
+  and find the best pubs, with the random pub suggestion just being
+  one feature of that.
+\end{itemize}
 
 \end{document}
