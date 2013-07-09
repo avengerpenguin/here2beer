@@ -16,6 +16,7 @@ import uk.co.rossfenning.android.here2beer.model.PlaceSearchResponse;
 import uk.co.rossfenning.android.here2beer.model.Pub;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
@@ -37,6 +38,8 @@ public class FindActivity extends Activity {
 
         final PubRequest pubRequest
             = (PubRequest) this.getIntent().getSerializableExtra("pub_request");
+        final Serializable previous
+            = this.getIntent().getSerializableExtra("previous_pub");
 
         URL url;
         try {
@@ -58,9 +61,21 @@ public class FindActivity extends Activity {
                     client, new HttpFetchTask.OnCompletionListener<PlaceSearchResponse>() {
 
                     public void onCompletion(final PlaceSearchResponse response) {
+
                         final List<Pub> results = response.getResults();
-                        final Pub randomPub = results.get(
+
+                        Pub randomPub = results.get(
                             new Random(System.currentTimeMillis()).nextInt(results.size()));
+                        
+                        if (previous != null) {
+                            final Pub previousPub = (Pub) previous;
+                            while (results.size() > 1
+                                && randomPub.getName().equals(previousPub.getName()))
+                            {
+                                randomPub = results.get(
+                                    new Random(System.currentTimeMillis()).nextInt(results.size()));
+                            }
+                        }
                         
                         final Intent intent = new Intent(FindActivity.this, PubActivity.class);
                         intent.putExtra("pub", randomPub);

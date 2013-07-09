@@ -14,11 +14,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import uk.co.rossfenning.android.here2beer.model.Pub;
 
 
 public class TakeMeHereToBeerFragment extends Fragment {
 
     private PubRequest pubRequest = new PubRequest();
+    private Pub previousPub;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -48,6 +50,7 @@ public class TakeMeHereToBeerFragment extends Fragment {
                 
                     final Intent randomIntent = new Intent(getActivity(), FindActivity.class);
                     randomIntent.putExtra("pub_request", getPubRequest());
+                    randomIntent.putExtra("previous_pub", previousPub);
                     TakeMeHereToBeerFragment.this.startActivity(randomIntent);
                 }
             }
@@ -88,5 +91,9 @@ public class TakeMeHereToBeerFragment extends Fragment {
      */
     public void setPubRequest(final PubRequest pubRequest) {
         this.pubRequest = pubRequest;
+    }
+
+    void setPreviousPub(final Pub pub) {
+        this.previousPub = pub;
     }
 }
