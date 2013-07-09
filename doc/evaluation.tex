@@ -89,6 +89,7 @@ that the next most useful improvement would be to allow some control over
 the pub search radius.
 
 \section{Ability to change radius of the pub search}
+\label{sec:change-radius}
 \subsection{Requirements}
 
 This feature's aim was to allow the beginning of some level of customisation
@@ -107,7 +108,13 @@ It was also noted that it would be more useful if the circle were backed
 by a static map to aid the visualisation of distance. This feature was
 added to the backlog of potential improvements.
 
+A bug was discovered where the app would crash if the radius were set
+small enough such that no pubs are within that distance. The random
+pub choice was not coping with the case where the list of pubs
+from which to choose was empty.
+
 \section{Ability to request another pub suggestion}
+\label{sec:another-pub}
 \subsection{Requirements}
 
 The objective with this feature was to allow a user to ``roll again'' and
@@ -156,6 +163,91 @@ It was also noted that the favourite status of a pub did not factor
 into the random suggestions. It was suggested that favourites could
 appear more or less frequently and perhaps the user could have some
 controls to adjust this.
+
+\section{Crash when there are no pubs in range}
+\subsection{Bug Description}
+
+This was a bug raised in the demo in section~\ref{sec:change-radius}.
+The random pub selection failed in the case where the list of
+potential pubs was empty and the error was not handled well enough
+to stop the app from crashing.
+
+What was added was a dialogue prompt that would pop up to inform
+the user if there are no pubs within the chosen radius. They would
+then be invited to try a larger radius.
+
+\subsection{Demo}
+
+The user acknowledged the problem had been fixed. The only comment
+was that the dialogue message could be friendlier or even make
+more of a joke about the user not wanting to walk very far.
+
+\section{Fixing the back button behaviour}
+
+\subsection{Requirements}
+In section~\ref{sec:another-pub}, it was noted that the back button
+would take the user back through the whole trail of pub suggestions.
+This meant there was no quick way to get back to the main
+screen with the radius selector. This was a result of doing each
+of the screens as a separate activity. The Android system was
+automatically transitioning through a stack of new activities
+and providing this trail.
+
+It was decided it would be better to refactor the app to use
+a single main activity with multiple fragments. The activity
+itself can then have more control over transitions and the views
+as well as the back button behavour. The back button was to
+take the user back to the home screen if they are on a pub
+suggestion and quit the app if they are on the main screen.
+
+\subsection{Demo}
+
+The user noted that the change removed a lot of confusion about
+how to use the app.
+
+\section{Add count of total number of pubs in search}
+
+\subsection{Requirements}
+
+This was raised in the demo in section~\ref{sec:another-pub}. When
+the user was getting the same handful of suggestions within a small
+search radius, it would have been a little more useful to indicate
+how many pubs in total were involved in the search to give an
+idea of how likely it is for the same suggestion to appear again.
+
+A small amount of text was added underneath the pub's name and
+address to indicate that it was chosen out of $N$ different
+possible pubs in the search area.
+
+\subsection{Demo}
+
+The user expressed that it was a useful piece of information.
+
+\section{Layout Changes}
+\subsection{Requirements}
+As the time allocated to developing the app was coming to an end, the
+final feature here was to do some quick layout changes to make the
+app a little more user-friendly. All of this was done with user
+input and suggestions.
+
+Firstly, the main ``From Here to Beer!'' button on the main screen
+was made larger and moved to the bottom of the screen. This is
+closer to where the user's thumb would be and makes it clearer
+that this is the primary button to engage the app.
+
+Secondly, some of the spacing between the three action buttons under
+the pub (``Get Directions'', ``Save to Favourites'' and ``Take Me
+Somewhere Else!'') was not consistent. This was tidied up.
+
+Thirdly, the text ``Finding\dots'' that appeared while a pub
+was being chosen was still in a small font aligned to the top-left.
+This was made larger and centred.
+
+\subsection{Demo}
+
+The user deemed all of these to be small improvements to the aesthetics.
+The larger ``Finding\dots'' text was especially noted to make
+it clearer that a pub is being searched and the user should wait.
 
 \chapter{Final Evaluation}
 \label{chapter:evaluation}
