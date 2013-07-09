@@ -29,7 +29,7 @@ of the product attained at the end.
 
 \chapter{Features}
 \label{chapter:features}
-\section{Feature \#001: Random pub nearby}
+\section{Random pub nearby}
 \subsection{Requirements}
 The first requirement was to develop the core proposition that a user may
 request the name of a random pub nearby. Additional information other than
@@ -52,7 +52,7 @@ still demonstrates the concept well. It was decided that the most
 value would be gained from the next iteration by adding enough
 additional pub information to help someone find a pub they do not know.
 
-\section{Feature \#002: Address of the pub is given}
+\section{ Address of the pub is given}
 \subsection{Requirements}
 
 The second requirement was simply to add additional information such as
@@ -69,7 +69,7 @@ visual separation of the pub name from the address.
 The user saw the addition of the street address a very valuable improvement
 as the app is somewhat more practical when you are told where the pub is.
 
-\section{Feature \#003: Show directions to the suggested pub}
+\section{Show directions to the suggested pub}
 \subsection{Requirements}
 
 The idea behind the third feature was to expand on the usability gained
@@ -88,7 +88,7 @@ completing the user journey for the app's primary purpose. It was decided
 that the next most useful improvement would be to allow some control over
 the pub search radius.
 
-\section{Feature \#004: Ability to change radius of the pub search}
+\section{Ability to change radius of the pub search}
 \subsection{Requirements}
 
 This feature's aim was to allow the beginning of some level of customisation
@@ -99,15 +99,63 @@ to reduce or expand the search radius.
 
 \subsection{Demo}
 
+The radius selector circle was deemed to be a useful feature and the fact
+it changes colour from green (very near pubs) to red (pubs some distance
+away) was noted as a positive addition.
 
+It was also noted that it would be more useful if the circle were backed
+by a static map to aid the visualisation of distance. This feature was
+added to the backlog of potential improvements.
 
-\section{Feature \#005: Ability to request another pub suggestion}
+\section{Ability to request another pub suggestion}
 \subsection{Requirements}
+
+The objective with this feature was to allow a user to ``roll again'' and
+request another pub if they do not like a particular suggestion. It was
+decided to implement this both as a button and also as an accelerometer
+feature that detects the device being shaken.
+
 \subsection{Demo}
 
-\section{Feature \#006: Saving favourite pubs}
+This feature was welcomed as a useful addition. The ability to change
+the suggestion to another one was seen as a core feature in order
+for the app to be usable. The experience was noted to be quick and
+easy to go through several suggestions.
+
+One issue raised was that as the app progresses through several new
+activities for each new suggestion, the only way to return to the main
+screen with the radius selector is then by pressing the back button
+several times.
+
+Another issue is that there is no feedback as to how many pubs there are
+in total in the search area, so it is not easy to tell if you are
+getting the same suggestion multiple times due to randomness or
+because there are not that many pubs within the radius given.
+
+Both of these issues were added to the backlog.
+
+\section{Saving favourite pubs}
 \subsection{Requirements}
+
+The purpose of this feature is to allow a basic ability to mark certain
+pubs as favourites. When a favourite pub is then suggested at a later
+date, the user is reminded that this is one they enjoyed. A list
+was also added to allow deletion.
+
 \subsection{Demo}
+
+The user enjoyed the star icon marking a favourite pub and noted
+that the feature worked as designed. The feature served its purpose
+as a reminder well, but had no further purpose above that. The user
+felt they would get more out of the feature if they were able to see
+favourites marked by others and things like lists of most popular
+pubs in an area. This would require an Internet-based service, but
+it is a feature to consider for the longer term.
+
+It was also noted that the favourite status of a pub did not factor
+into the random suggestions. It was suggested that favourites could
+appear more or less frequently and perhaps the user could have some
+controls to adjust this.
 
 \chapter{Final Evaluation}
 \label{chapter:evaluation}
