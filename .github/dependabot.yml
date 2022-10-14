@@ -1,7 +1,7 @@
 version: 2
 updates:
 - package-ecosystem: maven
-  directory: /
+  directory: /here2beer
   schedule:
     interval: daily
 - package-ecosystem: maven
@@ -9,7 +9,7 @@ updates:
   schedule:
     interval: daily
 - package-ecosystem: maven
-  directory: /here2beer
+  directory: /
   schedule:
     interval: daily
 
