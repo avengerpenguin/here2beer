@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-  
+
     <groupId>uk.co.rossfenning.android</groupId>
     <artifactId>here2beer-parent</artifactId>
     <version>0.6.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Here to Beer - Parent</name>
-  
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <platform.version>4.1.1.4</platform.version>
         <android.plugin.version>3.6.0</android.plugin.version>
     </properties>
-  
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -34,7 +34,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-  
+
     <build>
         <pluginManagement>
             <plugins>
@@ -49,7 +49,7 @@
                         <encoding>UTF-8</encoding>
                     </configuration>
                 </plugin>
-          
+
                 <plugin>
                     <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                     <artifactId>android-maven-plugin</artifactId>
@@ -72,7 +72,7 @@
             </plugins>
         </pluginManagement>
     </build>
-    
+
     <profiles>
         <profile>
             <!-- the standard profile runs the instrumentation tests -->
@@ -86,10 +86,10 @@
             </modules>
         </profile>
         <profile>
-            <!-- the release profile does sign, proguard, zipalign ... but does not 
+            <!-- the release profile does sign, proguard, zipalign ... but does not
             run instrumentation tests -->
             <id>release</id>
-            <!-- via this activation the profile is automatically used when the release 
+            <!-- via this activation the profile is automatically used when the release
             is done with the maven release plugin -->
             <activation>
                 <property>
@@ -105,7 +105,7 @@
 
     <scm>
         <developerConnection>scm:git:ssh://github.com/avengerpenguin/here2beer</developerConnection>
-    </scm>  
+    </scm>
 
     <distributionManagement>
         <repository>

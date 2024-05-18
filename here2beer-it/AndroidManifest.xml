@@ -12,4 +12,3 @@
         android:name="cucumber.api.android.CucumberInstrumentation"
         android:targetPackage="uk.co.rossfenning.android.here2beer"/>
 </manifest>
-
