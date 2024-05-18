@@ -35,7 +35,7 @@ public class PubActivity extends FragmentActivity {
 
         this.pub = (Pub) this.getIntent().getSerializableExtra("pub");
         this.pubRequest = (PubRequest) this.getIntent().getSerializableExtra("request");
-        
+
         setContentView(R.layout.activity_pub);
 
         final TextView pubView = (TextView) findViewById(R.id.pub_name);
@@ -167,5 +167,5 @@ public class PubActivity extends FragmentActivity {
         default:
             return super.onOptionsItemSelected(item);
         }
-    }    
+    }
 }

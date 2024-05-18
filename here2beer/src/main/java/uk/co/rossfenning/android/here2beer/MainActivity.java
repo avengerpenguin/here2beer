@@ -16,16 +16,16 @@ public class MainActivity extends FragmentActivity {
 
         final TakeMeHereToBeerFragment fragment
             = (TakeMeHereToBeerFragment) getSupportFragmentManager().findFragmentById(R.id.button_fragment);
-            
+
         final TextView milesText = (TextView) findViewById(R.id.miles_text);
         float radiusInMiles = fragment.getPubRequest().getRadius() / 1609.344f;
         milesText.setText(String.format("%.2f mile(s)", radiusInMiles));
-        
+
         final RadiusSelectorView radiusSelectorView
             = (RadiusSelectorView) findViewById(R.id.radius_selector);
-        
+
         radiusSelectorView.setPubRequest(fragment.getPubRequest());
-        
+
         radiusSelectorView.setOnRadiusChangedListener(new RadiusSelectorView.OnRadiusChangeListener() {
             @Override
             public void onRadiusChanged(final float newRadius) {
@@ -33,8 +33,8 @@ public class MainActivity extends FragmentActivity {
                 milesText.setText(String.format("%.2f mile(s)", radiusInMiles));
             }
         });
-        
-            
+
+
     }
 
     @Override
@@ -58,5 +58,5 @@ public class MainActivity extends FragmentActivity {
         default:
             return super.onOptionsItemSelected(item);
         }
-    }    
+    }
 }

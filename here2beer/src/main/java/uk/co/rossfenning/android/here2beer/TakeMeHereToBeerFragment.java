@@ -47,7 +47,7 @@ public class TakeMeHereToBeerFragment extends Fragment {
                 else {
                     getPubRequest().setLatitude(location.getLatitude());
                     getPubRequest().setLongitude(location.getLongitude());
-                
+
                     final Intent randomIntent = new Intent(getActivity(), FindActivity.class);
                     randomIntent.putExtra("pub_request", getPubRequest());
                     randomIntent.putExtra("previous_pub", previousPub);
@@ -55,10 +55,10 @@ public class TakeMeHereToBeerFragment extends Fragment {
                 }
             }
         });
-        
+
         return v;
     }
-    
+
     public Location getLocation() {
 
         final Criteria criteria = new Criteria();

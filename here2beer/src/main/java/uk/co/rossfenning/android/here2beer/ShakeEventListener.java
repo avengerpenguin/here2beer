@@ -99,7 +99,7 @@ public class ShakeEventListener implements SensorEventListener {
                 mLastDirectionChangeTime = now;
                 mDirectionChangeCount++;
 
-                // store last sensor data 
+                // store last sensor data
                 lastX = x;
                 lastY = y;
                 lastZ = z;
