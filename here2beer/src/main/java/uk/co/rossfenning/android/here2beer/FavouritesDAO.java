@@ -40,7 +40,7 @@ public class FavouritesDAO extends SQLiteOpenHelper {
         database.delete(FAVOURITES_TABLE, "id=?", new String[]{pub.getId()});
         database.close();
     }
-    
+
     public boolean isFavourite(final Pub pub) {
         final SQLiteDatabase database = getReadableDatabase();
         final Cursor query = database.query(
@@ -49,39 +49,39 @@ public class FavouritesDAO extends SQLiteOpenHelper {
             "id=?",
             new String[]{pub.getId()},
             null, null, null);
-        
-        
+
+
         int count = query.getCount();
         query.close();
         database.close();
         return count > 0;
     }
-    
+
     public LinkedList<Pub> getAllFavourites() {
         final SQLiteDatabase database = getReadableDatabase();
         final Cursor cursor = database.query(
             FAVOURITES_TABLE, new String[]{"id", "name", "vicinity"}, null, null, null, null, null);
 
         cursor.moveToFirst();
-        
+
         final LinkedList<Pub> favourites = new LinkedList<Pub>();
         while (!cursor.isAfterLast()) {
             final Pub pub = new Pub();
             pub.setId(cursor.getString(0));
             pub.setName(cursor.getString(1));
             pub.setVicinity(cursor.getString(2));
-            
+
             favourites.add(pub);
-            
+
             Log.d(getClass().getSimpleName(), "Found favourite: " + pub);
             cursor.moveToNext();
         }
-        
+
         cursor.close();
         database.close();
         return favourites;
     }
-    
+
     @Override
     public void onCreate(final SQLiteDatabase db) {
         db.execSQL(FAVOURITES_TABLE_CREATE);

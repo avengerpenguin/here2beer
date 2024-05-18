@@ -51,12 +51,12 @@ public class FavouritesActivity extends ListActivity {
             TextView addressView = (TextView) rowView.findViewById(R.id.favourite_address);
 
             final Pub pub = getItem(position);
-        
+
             nameView.setText(pub.getName());
             addressView.setText(pub.getVicinity());
-            
+
             Button removeButton = (Button) rowView.findViewById(R.id.remove_button);
-            
+
             removeButton.setOnClickListener(new View.OnClickListener() {
 
                 public void onClick(View v) {

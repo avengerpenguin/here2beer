@@ -55,12 +55,12 @@ public class MainActivitySteps extends ActivityInstrumentationTestCase2<MainActi
             testProvider, false, false, false, false, false, false, false,
             Criteria.POWER_LOW, Criteria.ACCURACY_FINE);
     }
-    
+
     @After
     public void destroyApp() {
         mainActivity.finish();
     }
-    
+
     @UiThreadTest
     @Given("^I am at (-?[\\d.]+),(-?[\\d.]+)$")
     public void setLocation(final double latitude, final double longitude)
@@ -93,7 +93,7 @@ public class MainActivitySteps extends ActivityInstrumentationTestCase2<MainActi
         solo.clickOnText("Take me from here to beer!");
         solo.waitForActivity("SplashActivity", 60000);
         solo.waitForActivity("PubActivity", 60000);
-        
+
         final TextView textView = solo.getText(2);
 
         previousPub = textView.getText().toString();
@@ -106,7 +106,7 @@ public class MainActivitySteps extends ActivityInstrumentationTestCase2<MainActi
         final TextView textView = solo.getText(2);
 
         previousPub = textView.getText().toString();
-        
+
         assertNotNull(textView);
         assertThat(textView.getText().toString(), isIn(pubNames.split(",")));
     }
@@ -123,7 +123,7 @@ public class MainActivitySteps extends ActivityInstrumentationTestCase2<MainActi
             = (TextView) solo.getView(uk.co.rossfenning.android.here2beer.R.id.pub_address);
         assertThat(addressView.getText().toString(), not(isEmptyOrNullString()));
     }
-    
+
     @Given("^I have been suggested a pub$")
     public void pubHasBeenSuggested() {
         waitForPubSuggestion();
