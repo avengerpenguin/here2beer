@@ -9,7 +9,7 @@ Feature: Ability to change radius of the pub search
     And I press the button for a random pub suggestion
     Then I should be suggested a pub out of "<pub_names>"
 
-    Examples: 
+    Examples:
       | place                       | location            | radius    | pub_names                                                                                                                                   |
       | Central Manchester          | 53.477626,-2.243872 | 0.1 miles | The Paramount,Premier Inn Manchester Central,Table Table,110 Restaurant and Bar,The Alibi,One Central Club,The Wyvern,Henry s Cafe Bar,True |
       | Christ's College, Cambridge | 52.205277,0.121945  | 0.1 miles | Ta Bouche,The Cow,Baroosh,Lola Lo                                                                                                           |

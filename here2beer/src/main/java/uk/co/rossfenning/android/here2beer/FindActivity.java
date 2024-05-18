@@ -66,7 +66,7 @@ public class FindActivity extends Activity {
 
                         Pub randomPub = results.get(
                             new Random(System.currentTimeMillis()).nextInt(results.size()));
-                        
+
                         if (previous != null) {
                             final Pub previousPub = (Pub) previous;
                             while (results.size() > 1
@@ -76,7 +76,7 @@ public class FindActivity extends Activity {
                                     new Random(System.currentTimeMillis()).nextInt(results.size()));
                             }
                         }
-                        
+
                         final Intent intent = new Intent(FindActivity.this, PubActivity.class);
                         intent.putExtra("pub", randomPub);
                         intent.putExtra("request", pubRequest);

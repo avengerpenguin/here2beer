@@ -9,9 +9,7 @@ env:
     - SDK_VERSION=16 ANDROID_SDKS=android-16,sysimg-16 ANDROID_TARGET=android-16  ANDROID_ABI=armeabi-v7a
     - SDK_VERSION=17 ANDROID_SDKS=android-17,sysimg-17 ANDROID_TARGET=android-17  ANDROID_ABI=armeabi-v7a
 
-
 before_install:
-
   - sudo apt-get update -qq
   - sudo apt-get install texlive
   - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch; fi
@@ -31,9 +29,9 @@ before_install:
   - emulator -avd test -no-skin -no-audio -no-window &
 
 before_script:
-    # Make sure the emulator has started before running tests
-    - adb wait-for-device
-    - adb logcat &
+  # Make sure the emulator has started before running tests
+  - adb wait-for-device
+  - adb logcat &
 
 notifications:
   email: false

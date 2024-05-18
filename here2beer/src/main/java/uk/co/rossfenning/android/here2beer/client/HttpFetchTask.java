@@ -15,11 +15,11 @@ public class HttpFetchTask<T extends Serializable>
     private final HttpClient<T> client;
 
     private OnCompletionListener<T> listener;
-    
+
     public interface OnCompletionListener<T2> {
         void onCompletion(T2 response);
     }
-    
+
     public HttpFetchTask(final HttpClient<T> client, final OnCompletionListener<T> listener) {
         this.listener = listener;
         this.client = client;

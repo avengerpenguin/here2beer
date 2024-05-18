@@ -23,7 +23,7 @@ public class PlaceSearchClient implements HttpClient<PlaceSearchResponse> {
             urlConnection.setConnectTimeout(20 * 1000);
             urlConnection.setDoInput(true);
             urlConnection.connect();
-            
+
             logger.info("Opening stream...");
             final InputStream responseStream = urlConnection.getInputStream();
             final String response = IOUtils.toString(responseStream, "UTF-8");

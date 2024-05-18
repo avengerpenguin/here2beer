@@ -10,7 +10,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 public class PlaceSearchClientTest {
-    
+
     private final URL mockUrl = getClass().getResource("/pubs.xml");
     private final PlaceSearchClient client = new PlaceSearchClient();
 

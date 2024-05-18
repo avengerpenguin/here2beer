@@ -29,5 +29,5 @@
         android:layout_alignParentLeft="true"
         android:layout_toLeftOf="@id/remove_button"
         android:layout_alignLeft="@id/favourite_name"/>
-    
+
 </RelativeLayout>

@@ -5,5 +5,5 @@ import java.net.URL;
 public interface HttpClient<T> {
 
     T fetch(final URL url);
-    
+
 }

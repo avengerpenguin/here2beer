@@ -23,7 +23,7 @@ public class Pub implements Serializable {
 
     @Element
     private Geometry geometry;
-    
+
     @Override
     public String toString() {
         return name;

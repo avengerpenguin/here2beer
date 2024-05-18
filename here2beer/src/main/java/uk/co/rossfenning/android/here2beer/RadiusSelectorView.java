@@ -20,7 +20,7 @@ public class RadiusSelectorView extends View {
     private PubRequest pubRequest = new PubRequest();
 
     private OnRadiusChangeListener onRadiusChangeListener;
-    
+
     public RadiusSelectorView(final Context context, final AttributeSet attrs) {
         super(context, attrs);
         circlePaint = new Paint();
@@ -57,17 +57,17 @@ public class RadiusSelectorView extends View {
     public void setPubRequest(final PubRequest pubRequest) {
         this.pubRequest = pubRequest;
     }
-    
+
     public void setOnRadiusChangedListener(final OnRadiusChangeListener onRadiusChangeListener) {
         this.onRadiusChangeListener = onRadiusChangeListener;
     }
 
     public interface OnRadiusChangeListener {
-        
+
         void onRadiusChanged(float newRadius);
-        
+
     }
-    
+
     private class CircleScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
 
         @Override
@@ -78,11 +78,11 @@ public class RadiusSelectorView extends View {
             newRadius = Math.max(minRadius, Math.min(newRadius, maxRadius));
 
             pubRequest.setRadius(newRadius);
-           
+
             if (onRadiusChangeListener != null) {
                 onRadiusChangeListener.onRadiusChanged(newRadius);
             }
-            
+
             invalidate();
 
             return true;
